@@ -47,7 +47,7 @@ class MenuSupply extends PureComponent {
                 styles.overlay,
                 {
                   backgroundColor: selectedTab === 0 ? "transparent" : 0,
-                  borderBottomWidth: selectedTab === 0 ? 1 : 0,
+                  borderBottomWidth: selectedTab === 0 ? 2 : 0,
                   // opacity: selectedTab === 0 ? 1 : 0.6,
                   height: selectedTab === 0 ? 42 : 40,
                 },
@@ -59,6 +59,10 @@ class MenuSupply extends PureComponent {
                   {
                     // marginRight: Platform.OS === "android" ? 10 : 20,
                     fontSize: selectedTab === 0 ? 16 : 16,
+                    fontWeight: selectedTab === 0 ? "bold" : "normal",
+                    // textDecorationLine:
+                    //   selectedTab === 0 ? "underline" : "none",
+                    // textDecorationColor: selectedTab === 0 ? "red" : "red",
                   },
                 ]}
               >
@@ -76,20 +80,20 @@ class MenuSupply extends PureComponent {
                 styles.overlay,
                 {
                   backgroundColor: selectedTab === 1 ? "transparent" : 0,
-                  borderBottomWidth: selectedTab === 1 ? 1 : 0,
+                  borderBottomWidth: selectedTab === 1 ? 2 : 0,
                   // opacity: selectedTab === 1 ? 1 : 0.6,
                   height: selectedTab === 1 ? 42 : 40,
                 },
               ]}
             >
               <Text
-                fontWeight="bold"
                 color="#fff"
                 style={[
                   styles.buttonText1,
                   {
                     // marginRight: Platform.OS === "android" ? 25 : 15,
                     fontSize: selectedTab === 1 ? 16 : 16,
+                    fontWeight: selectedTab === 1 ? "bold" : "normal",
                   },
                 ]}
               >
@@ -113,13 +117,15 @@ const styles = StyleSheet.create({
   // },
   overlay: {
     // borderWidth: 1,
-    borderColor: "#fff",
+    // marginTop: -10,
+    borderColor: "#ef624f",
     flexDirection: "row",
     height: 40,
     width: width / 5,
     borderRadius: 10,
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 10,
   },
   // buttonStyle: {
   //   width: width / 4.5,
@@ -148,10 +154,14 @@ const styles = StyleSheet.create({
   buttonText: {
     marginLeft: 15,
     color: "white",
+    marginBottom: -10,
+    // textDecorationColor: "#ef624f",
+    // textDecorationStyle: "dotted",
   },
   buttonText1: {
     marginLeft: 10,
     color: "white",
+    marginBottom: -10,
   },
 });
 

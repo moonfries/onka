@@ -64,7 +64,6 @@ const styles = {
     alignSelf: "flex-end",
   },
   loginContainer: {
-    backgroundColor: "#ef624f",
     marginTop: 30,
     height: 46,
     borderRadius: 20,
