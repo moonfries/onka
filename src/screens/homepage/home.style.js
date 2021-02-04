@@ -6,6 +6,11 @@ const styles = {
   safeAreaView: {
     flex: 1,
   },
+  body: {
+    position: "absolute",
+    height: "100%",
+    width: "100%",
+  },
   topContainer: {
     flexDirection: "row",
     alignItems: "center",

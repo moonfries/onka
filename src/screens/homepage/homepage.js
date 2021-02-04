@@ -11,6 +11,8 @@ import {
   StyleSheet,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import MainHeader from "../../components/MainHeader";
+import OrderNow from "../../components/OrderNow";
 import MenuSupply from "../../components/MenuSupply";
 import styles from "./home.style";
 
@@ -66,55 +68,8 @@ export default function homepage() {
           width: "100%",
         }}
       > */}
-      <View
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "100%",
-        }}
-      >
-        <View>
-          {/* <Image
-            source={require("../../assets/images/gradienttop.png")}
-            style={{ height: "40%" }}
-          /> */}
-          <View style={styles.topContainer}>
-            <TouchableOpacity style={styles.touchIcons}>
-              <Image
-                source={require("../../assets/images/search.png")}
-                style={styles.searchIcon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.touchIcons}>
-              <Image
-                source={require("../../assets/images/inboxmessage.png")}
-                style={styles.inboxmessageIcon}
-              />
-            </TouchableOpacity>
-            <MenuSupply />
-            <TouchableOpacity style={styles.touchIcons}>
-              <Image
-                source={require("../../assets/images/notifications.png")}
-                style={styles.notificationsIcon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.touchIcons1}>
-              <Image
-                source={require("../../assets/images/menu.png")}
-                style={styles.menuIcon}
-              />
-            </TouchableOpacity>
-          </View>
-          <Image
-            source={require("../../assets/images/play.png")}
-            style={{
-              marginTop: 200,
-              alignSelf: "center",
-              width: 60,
-              height: 75,
-            }}
-          />
-        </View>
+      <View style={styles.body}>
+        <MainHeader />
         <View style={styles.secondContainer}>
           <View style={styles.infoContainer}>
             <Image
@@ -166,12 +121,7 @@ export default function homepage() {
                 </View>
               </View>
             </View>
-            <TouchableOpacity>
-              <Image
-                source={require("../../assets/images/ordernow.png")}
-                style={styles.ordernowIcon}
-              />
-            </TouchableOpacity>
+            <OrderNow />
           </View>
         </View>
         <View style={styles.fourthContainer}>
