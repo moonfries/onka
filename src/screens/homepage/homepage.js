@@ -16,7 +16,7 @@ import OrderNow from "../../components/OrderNow";
 import MenuSupply from "../../components/MenuSupply";
 import styles from "./home.style";
 
-export default function homepage() {
+export default function homepage({ navigation }) {
   const width = useWindowDimensions().width;
   const height = "100%";
 
@@ -69,7 +69,7 @@ export default function homepage() {
         }}
       > */}
       <View style={styles.body}>
-        <MainHeader />
+        <MainHeader navigation={navigation} />
         <View style={styles.secondContainer}>
           <View style={styles.infoContainer}>
             <Image

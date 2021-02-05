@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import MenuSupply from "../components/MenuSupply";
 
-export default function MainHeader() {
+function MainHeader({ navigation }) {
   return (
     <View>
       {/* <Image
@@ -20,7 +20,10 @@ export default function MainHeader() {
             style={{ height: "40%" }}
           /> */}
       <View style={styles.topContainer}>
-        <TouchableOpacity style={styles.touchIcons}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Search")}
+          style={styles.touchIcons}
+        >
           <Image
             source={require("../assets/images/search.png")}
             style={styles.searchIcon}
@@ -58,6 +61,8 @@ export default function MainHeader() {
     </View>
   );
 }
+
+export default MainHeader;
 
 const styles = StyleSheet.create({
   topContainer: {

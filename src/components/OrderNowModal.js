@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Icon, List } from "native-base";
+import { Entypo } from "@expo/vector-icons";
 import Modal from "react-native-modal";
 
 const { width, height } = Dimensions.get("window");
@@ -71,30 +72,32 @@ const Modals = (props) => {
           style={styles.keyboard}
         >
           <View style={styles.topContainer}>
-            <View style={styles.sheetHeader}>
+            <View style={styles.header}>
               <TouchableOpacity onPress={props.onDismiss}>
-                <Icon
-                  type="Ionicons"
-                  name="chevron-down-outline"
-                  style={styles.backIcon}
-                />
+                <Icon style={styles.controlsLeft} name="chevron-back-outline" />
               </TouchableOpacity>
+              <Text style={styles.menu}>Beef Steak</Text>
+              <Entypo name="dots-three-vertical" size={20} color="black" />
             </View>
-
-            <Text style={styles.menu}>Beef Steak</Text>
+            <Text style={styles.imageCount}>1/4</Text>
             <View style={styles.imageContainer}>
-              <Icon style={styles.controlsLeft} name="chevron-back-outline" />
               <Image
                 source={require("../assets/images/beefsteak.jpg")}
                 style={styles.image}
               />
-              <Icon
-                style={styles.controlsRight}
-                name="chevron-forward-outline"
-              />
             </View>
-            <View>
-              <Text style={styles.price}>₱120</Text>
+            <View style={styles.info}>
+              <Text>
+                Marinate beef in soy sauce, lemon and pepper for at least one
+                hour.
+              </Text>
+            </View>
+            <View style={styles.priceContainer}>
+              <Image
+                source={require("../assets/images/peso.png")}
+                style={styles.priceImage}
+              />
+              <Text style={styles.price}>120</Text>
             </View>
             <View style={styles.counter}>
               <TouchableOpacity>
@@ -120,31 +123,42 @@ const Modals = (props) => {
                 style={styles.listBody}
                 keyExtractor={(menus) => menus.id}
                 renderRow={(menu) => (
-                  <View style={styles.lists}>
-                    <View style={styles.firstList}>
-                      <Image source={menu.image} style={styles.listImages} />
-                      <Text style={styles.listNames}>{menu.name}</Text>
-                    </View>
+                  <View>
+                    <View style={styles.lists}>
+                      <View style={styles.firstList}>
+                        <Image source={menu.image} style={styles.listImages} />
+                        <Text style={styles.listNames}>{menu.name}</Text>
+                      </View>
 
-                    <View style={styles.secondList}>
-                      <Text style={styles.listPrices}>{menu.price}</Text>
-
-                      <View style={styles.counter1}>
-                        <TouchableOpacity>
-                          <View style={styles.minusContainer}>
-                            <Icon name="remove-outline" style={styles.minus} />
-                          </View>
-                        </TouchableOpacity>
-                        <View style={styles.countContainer1}>
-                          <Text style={styles.count}>1</Text>
+                      <View style={styles.secondList}>
+                        <View style={styles.priceListContainer}>
+                          <Image
+                            source={require("../assets/images/peso.png")}
+                            style={styles.pesoList}
+                          />
+                          <Text style={styles.listPrices}>{menu.price}</Text>
                         </View>
-                        <TouchableOpacity>
-                          <View style={styles.plusContainer}>
-                            <Icon name="add-outline" style={styles.plus} />
+                        <View style={styles.counter1}>
+                          <TouchableOpacity>
+                            <View style={styles.minusContainer}>
+                              <Icon
+                                name="remove-outline"
+                                style={styles.minus}
+                              />
+                            </View>
+                          </TouchableOpacity>
+                          <View style={styles.countContainer1}>
+                            <Text style={styles.count}>1</Text>
                           </View>
-                        </TouchableOpacity>
+                          <TouchableOpacity>
+                            <View style={styles.plusContainer}>
+                              <Icon name="add-outline" style={styles.plus} />
+                            </View>
+                          </TouchableOpacity>
+                        </View>
                       </View>
                     </View>
+                    <View style={styles.borderList} />
                   </View>
                 )}
               />
@@ -176,104 +190,125 @@ const styles = StyleSheet.create({
   sheetContainer: {
     backgroundColor: "white",
   },
-  sheetHeader: {
+  header: {
+    justifyContent: "space-between",
+    flexDirection: "row",
     alignItems: "center",
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  imageCount: {
+    alignSelf: "center",
+  },
+  info: {
+    alignSelf: "center",
+    width: width / 1.3,
+    marginTop: 10,
   },
   controlsLeft: {
-    color: "lightgray",
+    color: "black",
     fontSize: 40,
-    marginRight: 30,
   },
-  controlsRight: {
-    color: "lightgray",
-    fontSize: 40,
-    marginLeft: 30,
+  priceContainer: {
+    alignSelf: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  priceImage: {
+    width: 20,
+    height: 19,
+  },
+  priceListContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  pesoList: {
+    width: 12,
+    height: 12,
+    marginRight: 2,
+    backgroundColor: "#fff",
   },
   counter: {
     flexDirection: "row",
     alignSelf: "center",
     marginTop: 10,
-    // flex: 1,
-    // justifyContent: "flex-end",
-    // alignItems: "flex-end",
   },
   counter1: {
     flexDirection: "row",
   },
   countContainer: {
-    width: 25,
-    height: 30,
+    width: 24,
+    height: 26,
     backgroundColor: "lightgray",
   },
   countContainer1: {
-    width: 25,
-    height: 30,
+    width: 24,
+    height: 26,
     backgroundColor: "white",
   },
   count: {
-    fontSize: 16,
+    fontSize: 12,
     marginTop: 5,
     alignSelf: "center",
   },
   price: {
     fontSize: 20,
-    marginTop: 10,
-    alignSelf: "center",
   },
   plus: {
     color: "white",
-    fontSize: 25,
+    fontSize: 20,
     alignSelf: "center",
-    marginTop: 2,
+    marginTop: 3,
   },
   plusContainer: {
-    width: 30,
-    height: 30,
+    width: 24,
+    height: 26,
     backgroundColor: "orange",
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
   },
   minus: {
     color: "white",
-    fontSize: 25,
+    fontSize: 20,
     alignSelf: "center",
-    marginTop: 2,
+    marginTop: 3,
   },
   minusContainer: {
-    width: 30,
-    height: 30,
+    width: 24,
+    height: 26,
     backgroundColor: "orange",
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
   },
   image: {
-    height: 140,
-    width: 140,
+    height: 200,
+    width: 220,
     borderRadius: 20,
   },
   imageContainer: {
-    marginTop: 10,
+    marginTop: 5,
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "center",
   },
   menu: {
-    alignSelf: "center",
-    marginTop: 10,
     color: "black",
     fontSize: 20,
     fontWeight: "bold",
   },
   listBody: {
-    marginTop: 30,
+    marginTop: 25,
+    backgroundColor: "#212529",
   },
   lists: {
     justifyContent: "space-between",
-    backgroundColor: "lightgray",
+    backgroundColor: "#212529",
     flexDirection: "row",
     alignItems: "center",
     height: 80,
-    marginBottom: 1,
+    // marginBottom: 1,
     // marginTop: 30,
   },
   firstList: {
@@ -287,15 +322,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   listImages: {
-    width: 50,
-    height: 50,
-    borderRadius: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 12,
+    borderColor: "#fff",
+    borderWidth: 4,
   },
   listNames: {
-    marginLeft: 20,
+    marginLeft: 10,
+    color: "#fff",
   },
   listPrices: {
     marginRight: 20,
+    color: "#fff",
   },
   modalContainer: {
     margin: 0,
@@ -314,27 +353,23 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   topContainer: {
-    height: height / 1.1,
+    height: "100%",
     backgroundColor: "white",
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
-  },
-  backIcon: {
-    fontSize: 40,
-    color: "gray",
   },
   ordernow: {
     flex: 1,
     justifyContent: "flex-end",
   },
   ordernowContainer: {
-    height: 75,
+    height: 60,
     backgroundColor: "red",
   },
   totalOrder: {
     flexDirection: "row",
     alignSelf: "center",
-    marginTop: 20,
+    marginTop: 15,
   },
   leftTotalOrder: {
     flexDirection: "row",
@@ -355,6 +390,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 22,
+  },
+  borderList: {
+    borderWidth: 0.2,
+    alignSelf: "center",
+    borderColor: "gray",
+    width: width / 1.15,
   },
 });
 
