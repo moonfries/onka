@@ -12,7 +12,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Icon, List } from "native-base";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, AntDesign } from "@expo/vector-icons";
 import Modal from "react-native-modal";
 
 const { width, height } = Dimensions.get("window");
@@ -133,7 +133,7 @@ const Modals = (props) => {
                       <View style={styles.secondList}>
                         <View style={styles.priceListContainer}>
                           <Image
-                            source={require("../assets/images/peso.png")}
+                            source={require("../assets/images/peso1.png")}
                             style={styles.pesoList}
                           />
                           <Text style={styles.listPrices}>{menu.price}</Text>
@@ -228,7 +228,6 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     marginRight: 2,
-    backgroundColor: "#fff",
   },
   counter: {
     flexDirection: "row",

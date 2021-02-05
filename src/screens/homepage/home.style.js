@@ -87,10 +87,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
-  chatIcon: {
-    width: 80,
-    height: 43,
-  },
   profileContainer: {
     flexDirection: "row",
     alignItems: "center",

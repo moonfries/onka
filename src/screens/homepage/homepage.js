@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import MainHeader from "../../components/MainHeader";
+import ChatNow from "../../components/ChatNow";
 import OrderNow from "../../components/OrderNow";
 import MenuSupply from "../../components/MenuSupply";
 import styles from "./home.style";
@@ -95,12 +96,7 @@ export default function homepage({ navigation }) {
         </View>
         <View style={styles.thirdContainer}>
           <View style={styles.chatOrderContainer}>
-            <TouchableOpacity>
-              <Image
-                source={require("../../assets/images/chatnow.png")}
-                style={styles.chatIcon}
-              />
-            </TouchableOpacity>
+            <ChatNow navigation={navigation} />
             <View style={styles.profileContainer}>
               <Image
                 source={require("../../assets/images/follow.png")}
