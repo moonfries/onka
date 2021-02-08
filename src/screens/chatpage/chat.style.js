@@ -49,7 +49,7 @@ const styles = {
   chatContainer: {
     borderRadius: 16,
     alignSelf: "flex-end",
-    backgroundColor: "gray",
+    backgroundColor: "#495058",
     height: 60,
     marginTop: 5,
     width: width / 1.6,
@@ -84,7 +84,8 @@ const styles = {
     borderRadius: 16,
     alignSelf: "center",
     width: width / 1.03,
-    backgroundColor: "gray",
+    color: "#fff",
+    backgroundColor: "#212429",
     height: 50,
     marginBottom: 10,
     paddingLeft: 10,

@@ -84,9 +84,7 @@ const chatpage = ({ navigation }) => {
                 style={styles.listBody1}
                 keyExtractor={(recievedTexts) => recievedTexts.id}
                 renderRow={(recievedText) => (
-                  <View
-                    style={styles.senderContainer}
-                  >
+                  <View style={styles.senderContainer}>
                     <Image
                       style={styles.dp}
                       source={require("../../assets/images/chef.png")}
@@ -105,7 +103,11 @@ const chatpage = ({ navigation }) => {
             </List>
           </View>
           <View>
-            <TextInput placeholder="Type here" style={styles.type} />
+            <TextInput
+              placeholder="Type here"
+              placeholderTextColor="#fff"
+              style={styles.type}
+            />
           </View>
         </View>
       </View>

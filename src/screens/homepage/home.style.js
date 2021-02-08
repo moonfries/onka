@@ -116,47 +116,6 @@ const styles = {
     width: 80,
     height: 43,
   },
-  fourthContainer: {
-    marginBottom: 20,
-    marginLeft: 30,
-    marginRight: 30,
-  },
-  subIconContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  iconName: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  nearbymarkerContainer: {
-    width: 20,
-  },
-  nearbymarkerIcon: {
-    width: 20,
-    height: 20,
-  },
-  orderIconContainer: {
-    width: 30,
-  },
-  orderIcon: {
-    width: 30,
-    height: 30,
-  },
-  sharefoodIcon: {
-    width: 18,
-    height: 18,
-  },
-  likeheartIcon: {
-    width: 18,
-    height: 18,
-  },
-  subText: {
-    fontSize: 12,
-    color: "#cfcfcf",
-    fontWeight: "bold",
-  },
 };
 
 export default styles;

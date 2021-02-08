@@ -16,6 +16,7 @@ import ChatNow from "../../components/ChatNow";
 import OrderNow from "../../components/OrderNow";
 import MenuSupply from "../../components/MenuSupply";
 import styles from "./home.style";
+import BottomContainer from "../../components/BottomContainer";
 
 export default function homepage({ navigation }) {
   const width = useWindowDimensions().width;
@@ -120,55 +121,7 @@ export default function homepage({ navigation }) {
             <OrderNow />
           </View>
         </View>
-        <View style={styles.fourthContainer}>
-          <View style={styles.subIconContainer}>
-            <View style={styles.iconName}>
-              <TouchableOpacity style={styles.nearbymarkerContainer}>
-                <Image
-                  source={require("../../assets/images/nearbymarker.png")}
-                  style={styles.nearbymarkerIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.subText}>0.5</Text>
-            </View>
-            <View style={styles.iconName}>
-              <TouchableOpacity style={styles.orderIconContainer}>
-                <Image
-                  source={require("../../assets/images/ordertrack.png")}
-                  style={styles.orderIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.subText}>42</Text>
-            </View>
-            <View style={styles.iconName}>
-              <TouchableOpacity style={styles.nearbymarkerContainer}>
-                <Image
-                  source={require("../../assets/images/comments.png")}
-                  style={styles.nearbymarkerIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.subText}>152</Text>
-            </View>
-            <View style={styles.iconName}>
-              <TouchableOpacity style={styles.nearbymarkerContainer}>
-                <Image
-                  source={require("../../assets/images/sharefood.png")}
-                  style={styles.sharefoodIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.subText}> 4</Text>
-            </View>
-            <View style={styles.iconName}>
-              <TouchableOpacity style={styles.nearbymarkerContainer}>
-                <Image
-                  source={require("../../assets/images/likeheart.png")}
-                  style={styles.likeheartIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.subText}>78</Text>
-            </View>
-          </View>
-        </View>
+        <BottomContainer />
         {/* <View
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.8)",
