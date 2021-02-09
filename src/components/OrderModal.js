@@ -77,7 +77,7 @@ const OrderModal = (props) => {
                   <View style={styles.space}>
                     <View style={styles.rightContainer}>
                       <Text style={styles.name}>{order.name}</Text>
-                      <Text style={styles.space}>ordered</Text>
+                      <Text style={styles.ordered}>ordered</Text>
                       <Text style={styles.food}>{order.food}</Text>
                     </View>
                     <Text style={styles.date}>{order.datetime}</Text>
@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
   topContainer: {
     height: "90%",
     backgroundColor: "white",
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   bar: {
     backgroundColor: "gray",
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     height: 80,
-    backgroundColor: "lightgray",
+    backgroundColor: "#f1f1f1",
     marginBottom: 1,
   },
   imageContainer: {
@@ -138,27 +138,35 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
+    borderWidth: 3,
+    borderColor: "#fff",
+    borderRadius: 25,
   },
   space: {
     marginLeft: 10,
+  },
+  ordered: {
+    marginLeft: 5,
+    color: "#424242",
+    fontSize: 14,
   },
   rightContainer: {
     flexDirection: "row",
     alignItems: "flex-end",
   },
   name: {
-    color: "black",
+    color: "#424242",
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 14,
   },
   food: {
     marginLeft: 5,
-    color: "black",
+    color: "#424242",
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 14,
   },
   date: {
-    color: "gray",
-    fontSize: 12,
+    color: "#b4b4b4",
+    fontSize: 11,
   },
 });

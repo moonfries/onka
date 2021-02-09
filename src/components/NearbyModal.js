@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
   topContainer: {
     height: "90%",
     backgroundColor: "white",
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   bar: {
     backgroundColor: "gray",

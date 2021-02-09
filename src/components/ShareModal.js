@@ -58,7 +58,7 @@ const ShareModal = (props) => {
                   <Entypo
                     name="twitter"
                     size={30}
-                    color="skyblue"
+                    color="#fff"
                     style={{ alignSelf: "center", marginTop: 10 }}
                   />
                 </View>
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
   topContainer: {
     height: "90%",
     backgroundColor: "white",
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   bar: {
     backgroundColor: "gray",
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   backgroundIcons: {
-    backgroundColor: "blue",
+    backgroundColor: "#87CEEB",
     width: 50,
     height: 50,
     borderRadius: 25,
