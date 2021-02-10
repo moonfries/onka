@@ -42,7 +42,12 @@ const CommentModal = (props) => {
         >
           <View style={styles.topContainer}>
             <TouchableOpacity onPress={props.onDismiss}>
-              <View style={styles.bar} />
+              <View style={{ height: 30 }}>
+                <Image
+                  source={require("../assets/images/line.png")}
+                  style={styles.line}
+                />
+              </View>
             </TouchableOpacity>
 
             <View style={styles.mainContainer}>
@@ -321,5 +326,11 @@ const styles = StyleSheet.create({
     height: 50,
     marginBottom: 50,
     paddingLeft: 10,
+  },
+  line: {
+    width: width / 4,
+    height: 15,
+    alignSelf: "center",
+    marginTop: 7,
   },
 });

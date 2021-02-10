@@ -5,6 +5,7 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
+  Image,
   Touchable,
 } from "react-native";
 import Modal from "react-native-modal";
@@ -36,7 +37,12 @@ const ShareModal = (props) => {
       >
         <View style={styles.topContainer}>
           <TouchableOpacity onPress={props.onDismiss}>
-            <View style={styles.bar} />
+            <View style={{ height: 30 }}>
+              <Image
+                source={require("../assets/images/line.png")}
+                style={styles.line}
+              />
+            </View>
           </TouchableOpacity>
           <View style={styles.body}>
             <Text style={styles.text}>Share Now</Text>
@@ -133,5 +139,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
+  },
+  line: {
+    width: width / 4,
+    height: 15,
+    alignSelf: "center",
+    marginTop: 7,
   },
 });

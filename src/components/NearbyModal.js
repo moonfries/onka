@@ -2,28 +2,48 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
+  Image,
   View,
   ImageBackground,
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Polyline, Marker } from "react-native-maps";
 import Modal from "react-native-modal";
 
 const { width } = Dimensions.get("window");
 
 const NearbyModal = (props) => {
   const { isVisible, onBackdropPress } = props;
-  const [state, setState] = useState({
-    region: {
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    },
-    autoComplete: null,
-    errorMessage: "",
-  });
+
+  const Sm = {
+    latitude: 14.30085,
+    longitude: 120.95648,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
+
+  const Hall = {
+    latitude: 14.283322,
+    longitude: 120.9599,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
+
+  // const [state, setState] = useState({
+  //   region: {
+  //     latitude: 14.30085,
+  //     longitude: 120.95648,
+  //     latitudeDelta: 0.0922,
+  //     longitudeDelta: 0.0421,
+  //     // latitude: 37.78825,
+  //     // longitude: -122.4324,
+  //     // latitudeDelta: 0.0922,
+  //     // longitudeDelta: 0.0421,
+  //   },
+  //   autoComplete: null,
+  //   errorMessage: "",
+  // });
 
   const [mapWidth, setMapWidth] = useState("99%");
   function updateMapStyling() {
@@ -52,12 +72,24 @@ const NearbyModal = (props) => {
       >
         <View style={styles.topContainer}>
           <TouchableOpacity onPress={props.onDismiss}>
-            <View style={styles.bar} />
+            <View style={{ height: 30 }}>
+              <Image
+                source={require("../assets/images/line.png")}
+                style={styles.line}
+              />
+            </View>
+            {/* <View style={styles.bar} /> */}
           </TouchableOpacity>
           <MapView
             showUserLocation={true}
             showsMyLocationButton={true}
-            region={state.region}
+            initialRegion={{
+              latitude: 14.30085,
+              longitude: 120.95648,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+            // region={state.region}
             style={{
               flex: 1,
               width: mapWidth,
@@ -65,7 +97,11 @@ const NearbyModal = (props) => {
             onMapReady={() => {
               updateMapStyling();
             }}
-          />
+          >
+            <Marker coordinate={{ latitude: 14.30085, longitude: 120.95648 }} />
+            <Polyline coordinates={[Sm, Hall]} strokeWidth={2} />
+            <Marker coordinate={{ latitude: 14.283322, longitude: 120.9599 }} />
+          </MapView>
         </View>
       </Modal>
     </View>
@@ -101,5 +137,11 @@ const styles = StyleSheet.create({
     width: width / 3.5,
     marginTop: 10,
     marginBottom: 10,
+  },
+  line: {
+    width: width / 4,
+    height: 15,
+    alignSelf: "center",
+    marginTop: 7,
   },
 });

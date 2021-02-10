@@ -22,7 +22,7 @@ function MainHeader({ navigation }) {
       <View style={styles.topContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Search")}
-          style={styles.touchIcons}
+          style={styles.touchSearchIcons}
         >
           <Image
             source={require("../assets/images/search.png")}
@@ -75,6 +75,11 @@ const styles = StyleSheet.create({
   },
   touchIcons: {
     width: 20,
+  },
+  touchSearchIcons: {
+    width: 30,
+    height: 20,
+    marginTop: 5,
   },
   touchIcons1: {
     width: 15,

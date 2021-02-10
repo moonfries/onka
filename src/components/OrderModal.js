@@ -60,8 +60,16 @@ const OrderModal = (props) => {
       >
         <View style={styles.topContainer}>
           <TouchableOpacity onPress={props.onDismiss}>
-            <View style={styles.bar} />
+            <View style={{ height: 30 }}>
+              <Image
+                source={require("../assets/images/line.png")}
+                style={styles.line}
+              />
+            </View>
           </TouchableOpacity>
+          {/* <TouchableOpacity onPress={props.onDismiss}>
+            <View style={styles.bar} />
+          </TouchableOpacity> */}
           <List>
             <List
               showsVerticalScrollIndicator={false}
@@ -168,5 +176,11 @@ const styles = StyleSheet.create({
   date: {
     color: "#b4b4b4",
     fontSize: 11,
+  },
+  line: {
+    width: width / 4,
+    height: 15,
+    alignSelf: "center",
+    marginTop: 7,
   },
 });
