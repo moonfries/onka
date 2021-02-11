@@ -17,6 +17,7 @@ import ChefTab from "../../components/ChefTab";
 import FoodTab from "../../components/FoodTab";
 import RestaurantTab from "../../components/RestaurantTab";
 import CoffeeTab from "../../components/CoffeeTab";
+import Filter from "../filterpage/filterpage";
 
 const { width } = Dimensions.get("window");
 
@@ -42,50 +43,53 @@ const SearchPage = (props) => {
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <View>
-        <ScrollView style={{ height: "100%" }}>
-          <View style={styles.header}>
-            <View style={styles.topComponents}>
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Image
-                  source={require("../../assets/images/whitearrow.png")}
-                  style={styles.back}
-                />
-                {/* <Icon style={styles.back} name="chevron-back-outline" /> */}
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.filter}>
-                <Image
-                  source={require("../../assets/images/filter.png")}
-                  style={styles.filterImage}
-                />
-                {/* <AntDesign
+        {/* <ScrollView style={{ height: "100%" }}> */}
+        <View style={styles.header}>
+          <View style={styles.topComponents}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
+                source={require("../../assets/images/whitearrow.png")}
+                style={styles.back}
+              />
+              {/* <Icon style={styles.back} name="chevron-back-outline" /> */}
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Filter")}
+              style={styles.filter}
+            >
+              <Image
+                source={require("../../assets/images/filter.png")}
+                style={styles.filterImage}
+              />
+              {/* <AntDesign
                   name="filter"
                   size={20}
                   color="black"
                   style={styles.filterIcon}
                 /> */}
-              </TouchableOpacity>
-              <Image
-                source={require("../../assets/images/basket.png")}
-                style={styles.basketImage}
-              />
-              {/* <AntDesign
+            </TouchableOpacity>
+            <Image
+              source={require("../../assets/images/basket.png")}
+              style={styles.basketImage}
+            />
+            {/* <AntDesign
                 name="gift"
                 size={24}
                 color="black"
                 style={styles.basket}
               /> */}
-            </View>
-            <Tab selectedTab={selectedTab} handleTabSelect={handleTabSelect} />
           </View>
+          <Tab selectedTab={selectedTab} handleTabSelect={handleTabSelect} />
+        </View>
 
-          {/* <View>{this.renderTabContent(selectedTab)}</View> */}
-          {selectedTab === "chef" ? (
-            <ChefTab navigation={navigation} />
-          ) : (
-            <FoodTab />
-          )}
-        </ScrollView>
+        {/* <View>{this.renderTabContent(selectedTab)}</View> */}
+        {/* </ScrollView> */}
       </View>
+      {selectedTab === "chef" ? (
+        <ChefTab navigation={navigation} />
+      ) : (
+        <FoodTab />
+      )}
     </SafeAreaView>
   );
 };
@@ -101,7 +105,7 @@ const styles = StyleSheet.create({
     height: 214,
   },
   topComponents: {
-    marginTop: 70,
+    marginTop: 60,
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "center",

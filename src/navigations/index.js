@@ -7,6 +7,7 @@ import LoginScreen from "../screens/loginpage/loginpage";
 import HomeScreen from "../screens/homepage/homepage";
 import SearchScreen from "../screens/searchpage/searchpage";
 import ChatScreen from "../screens/chatpage/chatpage";
+import FilterScreen from "../screens/filterpage/filterpage";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -18,6 +19,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen name="Filter" component={FilterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

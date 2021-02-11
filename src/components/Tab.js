@@ -7,49 +7,70 @@ const Tab = (props) => {
 
   return (
     <View style={styles.tab}>
-      <View style={{ alignItems: "center" }}>
+      <View
+        style={[
+          styles.iconContainer,
+          selectedTab === "chef" && { marginTop: -11.5 },
+        ]}
+      >
         <TouchableOpacity onPress={() => handleTabSelect("chef")}>
           <Image
             source={require("../assets/images/chef_.png")}
             style={[
               styles.image,
-              selectedTab === "chef" && { width: 70, height: 70 },
+              selectedTab === "chef" && { width: 65, height: 65 },
             ]}
           />
         </TouchableOpacity>
         <Text style={{ color: "#fff", fontSize: 12 }}>Chef</Text>
       </View>
-      <View style={{ alignItems: "center", marginLeft: 5 }}>
+
+      <View
+        style={[
+          styles.iconContainer1,
+          selectedTab === "food" && { marginTop: -11.5 },
+        ]}
+      >
         <TouchableOpacity onPress={() => handleTabSelect("food")}>
           <Image
             source={require("../assets/images/food.png")}
             style={[
               styles.image,
-              selectedTab === "food" && { width: 70, height: 70 },
+              selectedTab === "food" && { width: 65, height: 65 },
             ]}
           />
         </TouchableOpacity>
         <Text style={{ color: "#fff", fontSize: 12 }}>Food</Text>
       </View>
-      <View style={{ alignItems: "center", marginLeft: 5 }}>
+      <View
+        style={[
+          styles.iconContainer1,
+          selectedTab === "restaurants" && { marginTop: -11.5 },
+        ]}
+      >
         <TouchableOpacity onPress={() => handleTabSelect("restaurants")}>
           <Image
             source={require("../assets/images/restaurants.png")}
             style={[
               styles.image,
-              selectedTab === "restaurants" && { width: 70, height: 70 },
+              selectedTab === "restaurants" && { width: 65, height: 65 },
             ]}
           />
         </TouchableOpacity>
         <Text style={{ color: "#fff", fontSize: 12 }}>Restaurants</Text>
       </View>
-      <View style={{ alignItems: "center", marginLeft: 5 }}>
+      <View
+        style={[
+          styles.iconContainer1,
+          selectedTab === "coffee" && { marginTop: -11.5 },
+        ]}
+      >
         <TouchableOpacity onPress={() => handleTabSelect("coffee")}>
           <Image
             source={require("../assets/images/coffee.png")}
             style={[
               styles.image,
-              selectedTab === "coffee" && { width: 70, height: 70 },
+              selectedTab === "coffee" && { width: 65, height: 65 },
             ]}
           />
         </TouchableOpacity>
@@ -73,9 +94,16 @@ const styles = StyleSheet.create({
     // marginHorizontal: scale(17.5),
     // marginTop: verticalScale(17.5),
   },
+  iconContainer: {
+    alignItems: "center",
+  },
+  iconContainer1: {
+    alignItems: "center",
+    marginLeft: 5,
+  },
   image: {
-    width: 58,
-    height: 58,
+    width: 53,
+    height: 53,
   },
   // background: {
   //   height: 23,
