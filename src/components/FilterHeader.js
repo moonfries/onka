@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
     width: 12,
     height: 14,
     marginRight: 10,
-    marginTop: 5,
     backgroundColor: "#fff",
   },
 });

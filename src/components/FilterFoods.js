@@ -119,7 +119,7 @@ const FilterFoods = () => {
                         />
                         {/* <Feather name="bookmark" size={24} color="#fff" /> */}
                       </View>
-                      <View style={styles.bottomContainer1}>
+                      <View style={[styles.bottomContainer1, { marginTop: 3 }]}>
                         <View style={styles.icons}>
                           <Image
                             source={require("../assets/images/nearbymarker.png")}
@@ -180,12 +180,12 @@ const FilterFoods = () => {
                       <View style={styles.nameContainer}>
                         <View>
                           <Text style={styles.name}>{foodDiscovery.name}</Text>
-                          <View style={styles.starContainer}>
+                          <View style={styles.priceContainer}>
                             <Image
                               source={foodDiscovery.pesosign}
                               style={styles.pesoSign}
                             />
-                            <Text style={styles.name}>
+                            <Text style={styles.priceText}>
                               {foodDiscovery.price}
                             </Text>
                           </View>
@@ -195,7 +195,7 @@ const FilterFoods = () => {
                           style={styles.heartImage}
                         />
                       </View>
-                      <View style={[styles.bottomContainer1, { marginTop: 2 }]}>
+                      <View style={styles.bottomContainer1}>
                         <View style={styles.icons}>
                           <Image
                             source={require("../assets/images/nearbymarker.png")}
@@ -287,9 +287,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
   },
+  priceText: {
+    fontSize: 10,
+    fontWeight: "bold",
+    color: "#fff",
+  },
   starContainer: {
     flexDirection: "row",
     alignItems: "center",
+    marginTop: 3,
+  },
+  priceContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 1,
   },
   star: {
     width: 8,
@@ -307,13 +318,14 @@ const styles = StyleSheet.create({
   heartImage: {
     width: 18,
     height: 18,
+    marginTop: -5,
   },
   bottomContainer1: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "80%",
     alignSelf: "center",
-    marginTop: 5,
+    marginTop: 0,
   },
   icons: {
     flexDirection: "row",

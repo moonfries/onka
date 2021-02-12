@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { PureComponent } from "react";
 import {
   StyleSheet,
   Text,
@@ -21,80 +21,266 @@ import Filter from "../filterpage/filterpage";
 
 const { width } = Dimensions.get("window");
 
-const SearchPage = (props) => {
-  const { navigation } = props;
-  const [selectedTab, setSelectedTab] = useState("chef");
-
-  const handleTabSelect = (value) => {
-    setSelectedTab(value);
+class Search extends PureComponent {
+  state = {
+    selectedTab: 0,
   };
 
-  // renderTabContent = (selectedTab) => {
-  //   switch (selectedTab) {
-  //     case 0:
-  //       return <ChefTab />;
-  //     case 1:
-  //       return <FoodTab />;
-  //     default:
-  //       return null;
-  //   }
-  // };
+  renderTabContent = (selected) => {
+    switch (selected) {
+      case 0:
+        return <ChefTab />;
+      case 1:
+        return <FoodTab />;
+      case 2:
+        return <RestaurantTab />;
+      case 3:
+        return <CoffeeTab />;
+      default:
+        return null;
+    }
+  };
 
-  return (
-    <SafeAreaView style={styles.safeAreaView}>
-      <View>
-        {/* <ScrollView style={{ height: "100%" }}> */}
-        <View style={styles.header}>
-          <View style={styles.topComponents}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Image
-                source={require("../../assets/images/whitearrow.png")}
-                style={styles.back}
-              />
-              {/* <Icon style={styles.back} name="chevron-back-outline" /> */}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Filter")}
-              style={styles.filter}
-            >
-              <Image
-                source={require("../../assets/images/filter.png")}
-                style={styles.filterImage}
-              />
-              {/* <AntDesign
+  render() {
+    const { selectedTab } = this.state;
+    const { navigation } = this.props;
+
+    return (
+      <SafeAreaView style={styles.safeAreaView}>
+        <View>
+          {/* <ScrollView style={{ height: "100%" }}> */}
+          <View style={styles.header}>
+            <View style={styles.topComponents}>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Image
+                  source={require("../../assets/images/whitearrow.png")}
+                  style={styles.back}
+                />
+                {/* <Icon style={styles.back} name="chevron-back-outline" /> */}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Filter")}
+                style={styles.filter}
+              >
+                <Image
+                  source={require("../../assets/images/filter.png")}
+                  style={styles.filterImage}
+                />
+                {/* <AntDesign
                   name="filter"
                   size={20}
                   color="black"
                   style={styles.filterIcon}
                 /> */}
-            </TouchableOpacity>
-            <Image
-              source={require("../../assets/images/basket.png")}
-              style={styles.basketImage}
-            />
-            {/* <AntDesign
-                name="gift"
-                size={24}
-                color="black"
-                style={styles.basket}
-              /> */}
+              </TouchableOpacity>
+              <Image
+                source={require("../../assets/images/basket.png")}
+                style={styles.basketImage}
+              />
+            </View>
+            <View style={styles.tab}>
+              <View
+                style={[
+                  styles.iconContainer,
+                  {
+                    marginTop: selectedTab === 0 ? -5 : 0,
+                  },
+                  // selectedTab === "chef" && { marginTop: -11.5 },
+                ]}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({ selectedTab: 0 });
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/chef_.png")}
+                    style={[
+                      styles.image,
+                      {
+                        width: selectedTab === 0 ? 58 : 53,
+                        height: selectedTab === 0 ? 58 : 53,
+                      },
+                      // selectedTab === "chef" && { width: 65, height: 65 },
+                    ]}
+                  />
+                </TouchableOpacity>
+                <Text style={{ color: "#fff", fontSize: 12 }}>Chef</Text>
+              </View>
+
+              <View
+                style={[
+                  styles.iconContainer1,
+                  {
+                    marginTop: selectedTab === 1 ? -5 : 0,
+                  },
+                  // selectedTab === "food" && { marginTop: -11.5 },
+                ]}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({ selectedTab: 1 });
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/food.png")}
+                    style={[
+                      styles.image,
+                      {
+                        width: selectedTab === 1 ? 58 : 53,
+                        height: selectedTab === 1 ? 58 : 53,
+                      },
+                      // selectedTab === "food" && { width: 65, height: 65 },
+                    ]}
+                  />
+                </TouchableOpacity>
+                <Text style={{ color: "#fff", fontSize: 12 }}>Food</Text>
+              </View>
+              <View
+                style={[
+                  styles.iconContainer1,
+                  {
+                    marginTop: selectedTab === 2 ? -5 : 0,
+                  },
+                  // selectedTab === "restaurants" && { marginTop: -11.5 },
+                ]}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({ selectedTab: 2 });
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/restaurants.png")}
+                    style={[
+                      styles.image,
+                      {
+                        width: selectedTab === 2 ? 58 : 53,
+                        height: selectedTab === 2 ? 58 : 53,
+                      },
+                      // selectedTab === "restaurants" && { width: 65, height: 65 },
+                    ]}
+                  />
+                </TouchableOpacity>
+                <Text style={{ color: "#fff", fontSize: 12 }}>Restaurants</Text>
+              </View>
+              <View
+                style={[
+                  styles.iconContainer1,
+                  {
+                    marginTop: selectedTab === 3 ? -5 : 0,
+                  },
+                  // selectedTab === "coffee" && { marginTop: -11.5 },
+                ]}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({ selectedTab: 3 });
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/coffee.png")}
+                    style={[
+                      styles.image,
+                      {
+                        width: selectedTab === 3 ? 58 : 53,
+                        height: selectedTab === 3 ? 58 : 53,
+                      },
+                      // selectedTab === "coffee" && { width: 65, height: 65 },
+                    ]}
+                  />
+                </TouchableOpacity>
+                <Text style={{ color: "#fff", fontSize: 12 }}>Coffee</Text>
+              </View>
+            </View>
           </View>
-          <Tab selectedTab={selectedTab} handleTabSelect={handleTabSelect} />
+          <ScrollView>
+            <View style={{ marginBottom: 210 }}>
+              {this.renderTabContent(selectedTab)}
+            </View>
+          </ScrollView>
         </View>
+      </SafeAreaView>
+    );
+  }
+}
+export default Search;
 
-        {/* <View>{this.renderTabContent(selectedTab)}</View> */}
-        {/* </ScrollView> */}
-      </View>
-      {selectedTab === "chef" ? (
-        <ChefTab navigation={navigation} />
-      ) : (
-        <FoodTab />
-      )}
-    </SafeAreaView>
-  );
-};
+// const SearchPage = (props) => {
+//   const { navigation } = props;
+//   const [selectedTab, setSelectedTab] = useState("chef");
 
-export default SearchPage;
+//   const handleTabSelect = (value) => {
+//     setSelectedTab(value);
+//   };
+
+//   // renderTabContent = (selectedTab) => {
+//   //   switch (selectedTab) {
+//   //     case 0:
+//   //       return <ChefTab />;
+//   //     case 1:
+//   //       return <FoodTab />;
+//   //     default:
+//   //       return null;
+//   //   }
+//   // };
+
+//   return (
+//     <SafeAreaView style={styles.safeAreaView}>
+//       <View>
+//         {/* <ScrollView style={{ height: "100%" }}> */}
+//         <View style={styles.header}>
+//           <View style={styles.topComponents}>
+//             <TouchableOpacity onPress={() => navigation.goBack()}>
+//               <Image
+//                 source={require("../../assets/images/whitearrow.png")}
+//                 style={styles.back}
+//               />
+//               {/* <Icon style={styles.back} name="chevron-back-outline" /> */}
+//             </TouchableOpacity>
+//             <TouchableOpacity
+//               onPress={() => navigation.navigate("Filter")}
+//               style={styles.filter}
+//             >
+//               <Image
+//                 source={require("../../assets/images/filter.png")}
+//                 style={styles.filterImage}
+//               />
+//               {/* <AntDesign
+//                   name="filter"
+//                   size={20}
+//                   color="black"
+//                   style={styles.filterIcon}
+//                 /> */}
+//             </TouchableOpacity>
+//             <Image
+//               source={require("../../assets/images/basket.png")}
+//               style={styles.basketImage}
+//             />
+//             {/* <AntDesign
+//                 name="gift"
+//                 size={24}
+//                 color="black"
+//                 style={styles.basket}
+//               /> */}
+//           </View>
+//           <Tab />
+//           {/* <Tab selectedTab={selectedTab} handleTabSelect={handleTabSelect} /> */}
+//         </View>
+
+//         {/* <View>{this.renderTabContent(selectedTab)}</View> */}
+//         {/* </ScrollView> */}
+//       </View>
+//       {/* {selectedTab === "chef" ? (
+//         <ChefTab navigation={navigation} />
+//       ) : (
+//         <FoodTab />
+//       )} */}
+//     </SafeAreaView>
+//   );
+// };
+
+// export default SearchPage;
 
 const styles = StyleSheet.create({
   safeAreaView: {
@@ -141,6 +327,42 @@ const styles = StyleSheet.create({
   },
   basket: {
     color: "#fff",
+  },
+
+  tab: {
+    // height: 24,
+    // backgroundColor: "gray",
+    alignItems: "center",
+    borderRadius: 4,
+    flex: 1,
+    flexDirection: "row",
+    marginLeft: 15,
+    // padding: scale(6),
+    // marginHorizontal: scale(17.5),
+    // marginTop: verticalScale(17.5),
+  },
+  iconContainer: {
+    alignItems: "center",
+  },
+  iconContainer1: {
+    alignItems: "center",
+    marginLeft: 5,
+  },
+  image: {
+    width: 53,
+    height: 53,
+  },
+  // background: {
+  //   height: 23,
+  //   // width: scale(164),
+  //   flex: 1,
+  //   alignContent: "center",
+  //   justifyContent: "center",
+  //   borderRadius: 4,
+  // },
+  text: {
+    width: "100%",
+    textAlignVertical: "center",
   },
 });
 
