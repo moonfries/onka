@@ -42,7 +42,10 @@ function MainHeader({ navigation }) {
             style={styles.notificationsIcon}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.touchIcons1}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Profile")}
+          style={styles.touchIcons1}
+        >
           <Image
             source={require("../assets/images/avatar.png")}
             style={styles.avatarIcon}

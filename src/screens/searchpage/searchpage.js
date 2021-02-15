@@ -190,7 +190,7 @@ class Search extends PureComponent {
                       { fontWeight: selectedTab === 2 ? "bold" : "normal" },
                     ]}
                   >
-                    Restaurants
+                    Resto
                   </Text>
                 </View>
 
@@ -458,9 +458,11 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     alignItems: "center",
+    // marginRight: 14,
   },
   iconContainer1: {
     alignItems: "center",
+    // marginRight: 14,
     marginLeft: 5,
   },
   image: {
