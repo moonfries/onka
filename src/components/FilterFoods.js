@@ -45,7 +45,7 @@ const foodDiscoveries = [
     id: "4",
     image: require("../assets/images/menu3.jpg"),
     name: "Burger Steak",
-    image1: require("../assets/images/likeheart.png"),
+    image1: require("../assets/images/heartwhite.png"),
     pesosign: require("../assets/images/peso1.png"),
     price: "260",
     nearby: "5.5",
@@ -57,7 +57,7 @@ const foodDiscoveries = [
     id: "5",
     image: require("../assets/images/menu4.jpg"),
     name: "Beef Bulalo",
-    image1: require("../assets/images/likeheart.png"),
+    image1: require("../assets/images/heartwhite.png"),
     pesosign: require("../assets/images/peso1.png"),
     price: "120",
     nearby: "5.5",
@@ -119,7 +119,7 @@ const FilterFoods = () => {
                         />
                         {/* <Feather name="bookmark" size={24} color="#fff" /> */}
                       </View>
-                      <View style={[styles.bottomContainer1, { marginTop: 3 }]}>
+                      <View style={styles.bottomContainer1}>
                         <View style={styles.icons}>
                           <Image
                             source={require("../assets/images/nearbymarker.png")}
@@ -325,7 +325,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "80%",
     alignSelf: "center",
-    marginTop: 0,
+    marginTop: 3,
   },
   icons: {
     flexDirection: "row",

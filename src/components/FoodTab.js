@@ -106,7 +106,7 @@ const FoodTab = (props) => {
                         </View>
                       </View>
                       <Image
-                        source={require("../assets/images/likeheart.png")}
+                        source={require("../assets/images/heartwhite.png")}
                         style={{ width: 18, height: 18, marginTop: -5 }}
                       />
                     </View>
@@ -239,7 +239,7 @@ const FoodTab = (props) => {
                           </View>
                         </View>
                         <Image
-                          source={require("../assets/images/likeheart.png")}
+                          source={require("../assets/images/heartwhite.png")}
                           style={{ width: 18, height: 18, marginTop: -5 }}
                         />
                       </View>
@@ -466,7 +466,7 @@ const FoodTab = (props) => {
                         </View>
                       </View>
                       <Image
-                        source={require("../assets/images/likeheart.png")}
+                        source={require("../assets/images/heartwhite.png")}
                         style={{ width: 18, height: 18, marginTop: -5 }}
                       />
                       {/* <Feather name="bookmark" size={24} color="#fff" /> */}
@@ -601,7 +601,7 @@ const FoodTab = (props) => {
                         </View>
                       </View>
                       <Image
-                        source={require("../assets/images/likeheart.png")}
+                        source={require("../assets/images/heartwhite.png")}
                         style={{ width: 18, height: 18, marginTop: -5 }}
                       />
                       {/* <Feather name="bookmark" size={24} color="#fff" /> */}

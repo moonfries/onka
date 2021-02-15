@@ -44,8 +44,8 @@ function MainHeader({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchIcons1}>
           <Image
-            source={require("../assets/images/menu.png")}
-            style={styles.menuIcon}
+            source={require("../assets/images/avatar.png")}
+            style={styles.avatarIcon}
           />
         </TouchableOpacity>
       </View>
@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
     height: 18,
     marginBottom: -2,
   },
-  menuIcon: {
-    width: 15,
-    height: 15,
+  avatarIcon: {
+    width: 18,
+    height: 18,
     marginBottom: -2,
   },
 });

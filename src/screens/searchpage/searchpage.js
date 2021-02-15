@@ -17,6 +17,8 @@ import ChefTab from "../../components/ChefTab";
 import FoodTab from "../../components/FoodTab";
 import RestaurantTab from "../../components/RestaurantTab";
 import CoffeeTab from "../../components/CoffeeTab";
+import PizzaTab from "../../components/PizzaTab";
+import MilkteaTab from "../../components/MilkteaTab";
 import Filter from "../filterpage/filterpage";
 
 const { width } = Dimensions.get("window");
@@ -36,6 +38,10 @@ class Search extends PureComponent {
         return <RestaurantTab />;
       case 3:
         return <CoffeeTab />;
+      case 4:
+        return <PizzaTab />;
+      case 5:
+        return <MilkteaTab />;
       default:
         return null;
     }
@@ -78,121 +84,225 @@ class Search extends PureComponent {
                 style={styles.basketImage}
               />
             </View>
-            <View style={styles.tab}>
-              <View
-                style={[
-                  styles.iconContainer,
-                  {
-                    marginTop: selectedTab === 0 ? -5 : 0,
-                  },
-                  // selectedTab === "chef" && { marginTop: -11.5 },
-                ]}
-              >
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState({ selectedTab: 0 });
-                  }}
+            <ScrollView horizontal>
+              <View style={styles.tab}>
+                <View
+                  style={[
+                    styles.iconContainer,
+                    {
+                      marginTop: selectedTab === 0 ? -5 : 0,
+                    },
+                    // selectedTab === "chef" && { marginTop: -11.5 },
+                  ]}
                 >
-                  <Image
-                    source={require("../../assets/images/chef_.png")}
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 0 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/chef_.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 0 ? 58 : 53,
+                          height: selectedTab === 0 ? 58 : 53,
+                        },
+                        // selectedTab === "chef" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
                     style={[
-                      styles.image,
-                      {
-                        width: selectedTab === 0 ? 58 : 53,
-                        height: selectedTab === 0 ? 58 : 53,
-                      },
-                      // selectedTab === "chef" && { width: 65, height: 65 },
+                      styles.label,
+                      { fontWeight: selectedTab === 0 ? "bold" : "normal" },
                     ]}
-                  />
-                </TouchableOpacity>
-                <Text style={{ color: "#fff", fontSize: 12 }}>Chef</Text>
-              </View>
+                  >
+                    Chef
+                  </Text>
+                </View>
 
-              <View
-                style={[
-                  styles.iconContainer1,
-                  {
-                    marginTop: selectedTab === 1 ? -5 : 0,
-                  },
-                  // selectedTab === "food" && { marginTop: -11.5 },
-                ]}
-              >
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState({ selectedTab: 1 });
-                  }}
+                <View
+                  style={[
+                    styles.iconContainer1,
+                    {
+                      marginTop: selectedTab === 1 ? -5 : 0,
+                    },
+                    // selectedTab === "food" && { marginTop: -11.5 },
+                  ]}
                 >
-                  <Image
-                    source={require("../../assets/images/food.png")}
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 1 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/food.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 1 ? 58 : 53,
+                          height: selectedTab === 1 ? 58 : 53,
+                        },
+                        // selectedTab === "food" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
                     style={[
-                      styles.image,
-                      {
-                        width: selectedTab === 1 ? 58 : 53,
-                        height: selectedTab === 1 ? 58 : 53,
-                      },
-                      // selectedTab === "food" && { width: 65, height: 65 },
+                      styles.label,
+                      { fontWeight: selectedTab === 1 ? "bold" : "normal" },
                     ]}
-                  />
-                </TouchableOpacity>
-                <Text style={{ color: "#fff", fontSize: 12 }}>Food</Text>
-              </View>
-              <View
-                style={[
-                  styles.iconContainer1,
-                  {
-                    marginTop: selectedTab === 2 ? -5 : 0,
-                  },
-                  // selectedTab === "restaurants" && { marginTop: -11.5 },
-                ]}
-              >
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState({ selectedTab: 2 });
-                  }}
+                  >
+                    Food
+                  </Text>
+                </View>
+
+                <View
+                  style={[
+                    styles.iconContainer1,
+                    {
+                      marginTop: selectedTab === 2 ? -5 : 0,
+                    },
+                    // selectedTab === "restaurants" && { marginTop: -11.5 },
+                  ]}
                 >
-                  <Image
-                    source={require("../../assets/images/restaurants.png")}
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 2 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/restaurants.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 2 ? 58 : 53,
+                          height: selectedTab === 2 ? 58 : 53,
+                        },
+                        // selectedTab === "restaurants" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
                     style={[
-                      styles.image,
-                      {
-                        width: selectedTab === 2 ? 58 : 53,
-                        height: selectedTab === 2 ? 58 : 53,
-                      },
-                      // selectedTab === "restaurants" && { width: 65, height: 65 },
+                      styles.label,
+                      { fontWeight: selectedTab === 2 ? "bold" : "normal" },
                     ]}
-                  />
-                </TouchableOpacity>
-                <Text style={{ color: "#fff", fontSize: 12 }}>Restaurants</Text>
-              </View>
-              <View
-                style={[
-                  styles.iconContainer1,
-                  {
-                    marginTop: selectedTab === 3 ? -5 : 0,
-                  },
-                  // selectedTab === "coffee" && { marginTop: -11.5 },
-                ]}
-              >
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState({ selectedTab: 3 });
-                  }}
+                  >
+                    Restaurants
+                  </Text>
+                </View>
+
+                <View
+                  style={[
+                    styles.iconContainer1,
+                    {
+                      marginTop: selectedTab === 3 ? -5 : 0,
+                    },
+                    // selectedTab === "coffee" && { marginTop: -11.5 },
+                  ]}
                 >
-                  <Image
-                    source={require("../../assets/images/coffee.png")}
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 3 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/coffee.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 3 ? 58 : 53,
+                          height: selectedTab === 3 ? 58 : 53,
+                        },
+                        // selectedTab === "coffee" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
                     style={[
-                      styles.image,
-                      {
-                        width: selectedTab === 3 ? 58 : 53,
-                        height: selectedTab === 3 ? 58 : 53,
-                      },
-                      // selectedTab === "coffee" && { width: 65, height: 65 },
+                      styles.label,
+                      { fontWeight: selectedTab === 3 ? "bold" : "normal" },
                     ]}
-                  />
-                </TouchableOpacity>
-                <Text style={{ color: "#fff", fontSize: 12 }}>Coffee</Text>
+                  >
+                    Coffee
+                  </Text>
+                </View>
+
+                <View
+                  style={[
+                    styles.iconContainer1,
+                    {
+                      marginTop: selectedTab === 4 ? -5 : 0,
+                    },
+                    // selectedTab === "coffee" && { marginTop: -11.5 },
+                  ]}
+                >
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 4 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/pizza.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 4 ? 58 : 53,
+                          height: selectedTab === 4 ? 58 : 53,
+                        },
+                        // selectedTab === "coffee" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
+                    style={[
+                      styles.label,
+                      { fontWeight: selectedTab === 4 ? "bold" : "normal" },
+                    ]}
+                  >
+                    Pizza
+                  </Text>
+                </View>
+
+                <View
+                  style={[
+                    styles.iconContainer1,
+                    {
+                      marginTop: selectedTab === 5 ? -5 : 0,
+                    },
+                    // selectedTab === "coffee" && { marginTop: -11.5 },
+                  ]}
+                >
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ selectedTab: 5 });
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/milktea.png")}
+                      style={[
+                        styles.image,
+                        {
+                          width: selectedTab === 5 ? 58 : 53,
+                          height: selectedTab === 5 ? 58 : 53,
+                        },
+                        // selectedTab === "coffee" && { width: 65, height: 65 },
+                      ]}
+                    />
+                  </TouchableOpacity>
+                  <Text
+                    style={[
+                      styles.label,
+                      { fontWeight: selectedTab === 5 ? "bold" : "normal" },
+                    ]}
+                  >
+                    Milktea
+                  </Text>
+                </View>
               </View>
-            </View>
+            </ScrollView>
           </View>
           <ScrollView>
             <View style={{ marginBottom: 210 }}>
@@ -309,6 +419,10 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 9,
   },
+  label: {
+    color: "#fff",
+    fontSize: 12,
+  },
   basketImage: {
     width: 21,
     height: 21,
@@ -337,6 +451,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     marginLeft: 15,
+    marginRight: 15,
     // padding: scale(6),
     // marginHorizontal: scale(17.5),
     // marginTop: verticalScale(17.5),

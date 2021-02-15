@@ -97,7 +97,7 @@ const ChefTab = (props) => {
                         >
                           Chef Kim
                         </Text>
-                        <View style={{ flexDirection: "row" }}>
+                        <View style={{ flexDirection: "row", marginTop: 3 }}>
                           <Image
                             source={require("../assets/images/star.png")}
                             style={{ width: 8, height: 8 }}
@@ -127,7 +127,7 @@ const ChefTab = (props) => {
                         justifyContent: "space-between",
                         width: "80%",
                         alignSelf: "center",
-                        marginTop: 5,
+                        marginTop: 3,
                       }}
                     >
                       <View
@@ -241,7 +241,7 @@ const ChefTab = (props) => {
                           >
                             Chef Lea
                           </Text>
-                          <View style={{ flexDirection: "row" }}>
+                          <View style={{ flexDirection: "row", marginTop: 3 }}>
                             <Image
                               source={require("../assets/images/star.png")}
                               style={{ width: 8, height: 8 }}
@@ -271,7 +271,7 @@ const ChefTab = (props) => {
                           justifyContent: "space-between",
                           width: "80%",
                           alignSelf: "center",
-                          marginTop: 5,
+                          marginTop: 3,
                         }}
                       >
                         <View
@@ -480,7 +480,7 @@ const ChefTab = (props) => {
                         >
                           Chef Mona
                         </Text>
-                        <View style={{ flexDirection: "row" }}>
+                        <View style={{ flexDirection: "row", marginTop: 3 }}>
                           <Image
                             source={require("../assets/images/star.png")}
                             style={{ width: 8, height: 8 }}
@@ -510,7 +510,7 @@ const ChefTab = (props) => {
                         justifyContent: "space-between",
                         width: "80%",
                         alignSelf: "center",
-                        marginTop: 5,
+                        marginTop: 3,
                       }}
                     >
                       <View
@@ -626,7 +626,7 @@ const ChefTab = (props) => {
                         >
                           Chef Kim
                         </Text>
-                        <View style={{ flexDirection: "row" }}>
+                        <View style={{ flexDirection: "row", marginTop: 3 }}>
                           <Image
                             source={require("../assets/images/star.png")}
                             style={{ width: 8, height: 8 }}
@@ -656,7 +656,7 @@ const ChefTab = (props) => {
                         justifyContent: "space-between",
                         width: "80%",
                         alignSelf: "center",
-                        marginTop: 5,
+                        marginTop: 3,
                       }}
                     >
                       <View
