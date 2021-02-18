@@ -20,114 +20,118 @@ import styles from "./login.style";
 function LoginScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      <ImageBackground
+      {/* <ImageBackground
         source={require("../../assets/images/loginbg.jpg")}
         style={{ height: "100%" }}
-      >
-        <ScrollView>
-          {/* <KeyboardAvoidingView behavior="padding" style={styles.keyboard}> */}
-          <View style={styles.mainContainer}>
-            <View style={styles.subContainer}>
-              <Image
-                source={require("../../assets/images/Logo.png")}
-                style={styles.onkaLogo}
+      > */}
+      <ScrollView>
+        {/* <KeyboardAvoidingView behavior="padding" style={styles.keyboard}> */}
+        <View style={styles.mainContainer}>
+          <View style={styles.subContainer}>
+            <Image
+              source={require("../../assets/images/Logo.png")}
+              style={styles.onkaLogo}
+            />
+            <Text style={styles.motto}>Your Personal Chef</Text>
+            <View style={styles.switchSelector}>
+              <SwitchSelector
+                initial={0}
+                // onPress={(value) => this.setState({ gender: value })}
+                textColor="#6f6f6f"
+                selectedColor="#fff"
+                buttonColor="#fab005"
+                selectedTextStyle={{ fontWeight: "bold" }}
+                fontSize={14}
+                hasPadding
+                height={46}
+                options={[
+                  { label: "Login", value: "login" },
+                  { label: "Signup", value: "signup" },
+                ]}
               />
-              <Text style={styles.motto}>Chef on your doorstep</Text>
-              <View style={styles.switchSelector}>
-                <SwitchSelector
-                  initial={0}
-                  // onPress={(value) => this.setState({ gender: value })}
-                  textColor="black"
-                  selectedColor="white"
-                  buttonColor="#fab005"
-                  hasPadding
-                  height={42}
-                  options={[
-                    { label: "Login", value: "login" },
-                    { label: "Signup", value: "signup" },
-                  ]}
+            </View>
+            <View style={styles.fieldContainer}>
+              <View style={styles.fieldSubContainer}>
+                <TextInput
+                  color="#6f6f6f"
+                  value="Test"
+                  placeholderTextColor="#6f6f6f"
+                  borderBottomColor="#6f6f6f"
+                  style={styles.username}
+                />
+                <AntDesign
+                  name="user"
+                  size={16}
+                  color="#6f6f6f"
+                  style={styles.iconTextInput}
                 />
               </View>
-              <View style={styles.fieldContainer}>
-                <View style={styles.fieldSubContainer}>
-                  <TextInput
-                    color="#d6d6d6"
-                    placeholder="Username"
-                    placeholderTextColor="#d6d6d6"
-                    borderBottomColor="#d6d6d6"
-                    style={styles.username}
-                  />
-                  <AntDesign
-                    name="user"
-                    size={16}
-                    color="white"
-                    style={styles.iconTextInput}
-                  />
-                </View>
 
-                <View style={styles.fieldSubContainer}>
-                  <TextInput
-                    color="#d6d6d6"
-                    placeholder="Password"
-                    placeholderTextColor="#d6d6d6"
-                    borderBottomColor="#d6d6d6"
-                    secureTextEntry={true}
-                    style={styles.username}
-                  />
-                  <AntDesign
-                    name="eye"
-                    size={16}
-                    color="white"
-                    style={styles.iconTextInput}
-                  />
-                </View>
-
-                <TouchableOpacity style={styles.forgotContainer}>
-                  <Text style={styles.forgotText}>Forgot Password?</Text>
-                </TouchableOpacity>
+              <View style={styles.fieldSubContainer}>
+                <TextInput
+                  color="#6f6f6f"
+                  value="*******"
+                  placeholderTextColor="#6f6f6f"
+                  // borderBottomColor="red"
+                  secureTextEntry={true}
+                  style={styles.username}
+                />
+                <AntDesign
+                  name="eye"
+                  size={16}
+                  color="#6f6f6f"
+                  style={styles.iconTextInput}
+                />
               </View>
 
-              <Pressable
-                onPress={() => navigation.navigate("Home")}
-                style={({ pressed }) => [
-                  { backgroundColor: pressed ? "#b74436" : "#ef6250" },
-                  styles.loginContainer,
-                ]}
-              >
-                <Text style={styles.loginText}>Login</Text>
-              </Pressable>
-              <Text style={styles.orText}>Or</Text>
-              <View style={styles.socialMediaContainer}>
-                <TouchableOpacity>
-                  <Image
-                    source={require("../../assets/images/fb.png")}
-                    style={styles.socialMediaIcons}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Image
-                    source={require("../../assets/images/twitter.png")}
-                    style={styles.socialMediaIcons}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Image
-                    source={require("../../assets/images/insta.png")}
-                    style={styles.socialMediaIcons}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Image
-                    source={require("../../assets/images/gmail.png")}
-                    style={styles.socialMediaIcons}
-                  />
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity style={styles.forgotContainer}>
+                <Text style={styles.forgotText}>Forgot Password?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <Pressable
+              onPress={() => navigation.navigate("Home")}
+              style={({ pressed }) => [
+                {
+                  backgroundColor: pressed ? "#fab005" : "#fab005",
+                },
+                styles.loginContainer,
+              ]}
+            >
+              <Text style={styles.loginText}>Login</Text>
+            </Pressable>
+            <Text style={styles.orText}>Or</Text>
+            <View style={styles.socialMediaContainer}>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/images/fb.png")}
+                  style={styles.socialMediaIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/images/twitter.png")}
+                  style={styles.socialMediaIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/images/insta.png")}
+                  style={styles.socialMediaIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/images/gmail.png")}
+                  style={styles.socialMediaIcons}
+                />
+              </TouchableOpacity>
             </View>
           </View>
-          {/* </KeyboardAvoidingView> */}
-        </ScrollView>
-      </ImageBackground>
+        </View>
+        {/* </KeyboardAvoidingView> */}
+      </ScrollView>
+      {/* </ImageBackground> */}
     </SafeAreaView>
   );
 }

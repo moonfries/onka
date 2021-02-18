@@ -79,10 +79,12 @@ class Search extends PureComponent {
                   style={styles.filterIcon}
                 /> */}
               </TouchableOpacity>
-              <Image
-                source={require("../../assets/images/basket.png")}
-                style={styles.basketImage}
-              />
+              <TouchableOpacity onPress={() => navigation.navigate("Store")}>
+                <Image
+                  source={require("../../assets/images/basketsupply.png")}
+                  style={styles.basketImage}
+                />
+              </TouchableOpacity>
             </View>
             <ScrollView horizontal>
               <View style={styles.tab}>

@@ -9,6 +9,7 @@ import SearchScreen from "../screens/searchpage/searchpage";
 import ChatScreen from "../screens/chatpage/chatpage";
 import FilterScreen from "../screens/filterpage/filterpage";
 import ProfileScreen from "../screens/profilepage/profilepage";
+import StoreScreen from "../screens/storescreen/storescreen";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Filter" component={FilterScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Store" component={StoreScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
