@@ -80,7 +80,11 @@ const NearbyModal = (props) => {
             </View>
             {/* <View style={styles.bar} /> */}
           </TouchableOpacity>
-          <MapView
+          <Image
+            source={require("../assets/images/map.png")}
+            style={{ height: "100%", width: "100%" }}
+          />
+          {/* <MapView
             showUserLocation={true}
             showsMyLocationButton={true}
             initialRegion={{
@@ -101,7 +105,7 @@ const NearbyModal = (props) => {
             <Marker coordinate={{ latitude: 14.30085, longitude: 120.95648 }} />
             <Polyline coordinates={[Sm, Hall]} strokeWidth={2} />
             <Marker coordinate={{ latitude: 14.283322, longitude: 120.9599 }} />
-          </MapView>
+          </MapView> */}
         </View>
       </Modal>
     </View>
