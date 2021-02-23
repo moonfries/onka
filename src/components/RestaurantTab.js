@@ -739,7 +739,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     height: 197,
-    width: 393,
+    width: "100%",
   },
   // imageContainer: {
   //   backgroundColor: "red",

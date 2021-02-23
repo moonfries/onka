@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 
-const storescreen = () => {
+const basketscreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <Image
@@ -12,6 +12,6 @@ const storescreen = () => {
   );
 };
 
-export default storescreen;
+export default basketscreen;
 
 const styles = StyleSheet.create({});

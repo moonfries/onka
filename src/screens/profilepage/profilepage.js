@@ -8,7 +8,6 @@ import {
   ScrollView,
 } from "react-native";
 import styles from "./profile.style";
-import style from "./profile.style";
 
 const profilepage = (props) => {
   const { navigation } = props;

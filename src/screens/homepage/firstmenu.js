@@ -10,6 +10,7 @@ import {
   useWindowDimensions,
   ScrollView,
   StyleSheet,
+  Touchable,
 } from "react-native";
 import Swiper from "react-native-swiper";
 import { AntDesign } from "@expo/vector-icons";
@@ -62,14 +63,19 @@ const secondmenu = ({ navigation }) => {
             <View style={styles.chatOrderContainer}>
               <ChatNow navigation={navigation} />
               <View style={styles.profileContainer}>
-                <Image
-                  source={require("../../assets/images/follow.png")}
-                  style={styles.followIcon}
-                />
-                <Image
-                  source={require("../../assets/images/chef.png")}
-                  style={styles.profile}
-                />
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Store")}
+                  style={styles.pic}
+                >
+                  <Image
+                    source={require("../../assets/images/follow.png")}
+                    style={styles.followIcon}
+                  />
+                  <Image
+                    source={require("../../assets/images/chef.png")}
+                    style={styles.profile}
+                  />
+                </TouchableOpacity>
                 <View style={styles.nameContainer}>
                   <Text style={styles.nameText}>ChefBea12</Text>
                   <View style={{ flexDirection: "row" }}>

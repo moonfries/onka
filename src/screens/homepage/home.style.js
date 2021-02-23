@@ -91,6 +91,10 @@ const styles = {
     flexDirection: "row",
     alignItems: "center",
   },
+  pic: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   profile: {
     width: 55,
     height: 55,

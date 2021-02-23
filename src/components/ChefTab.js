@@ -7,8 +7,10 @@ import {
   ScrollView,
   ImageBackground,
   Dimensions,
+  Touchable,
 } from "react-native";
 import { Entypo, AntDesign, Feather } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const { width } = Dimensions.get("window");
 
@@ -46,152 +48,9 @@ const ChefTab = (props) => {
           }}
         >
           <View>
-            <ImageBackground
-              source={require("../assets/images/chef1.jpg")}
-              imageStyle={{ borderRadius: 20 }}
-              style={styles.image1}
-            >
-              <View
-                style={{
-                  height: "100%",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Image
-                  source={require("../assets/images/featured1.png")}
-                  style={{ width: 50, height: 52 }}
-                />
-                <View
-                // style={{
-                //   justifyContent: "flex-end",
-                //   height: "100%",
-                // }}
-                >
-                  <View
-                    style={{
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                      height: 67,
-                      backgroundColor: "rgba(52, 52, 52, 0.8)",
-                      borderBottomLeftRadius: 20,
-                      borderBottomRightRadius: 20,
-                    }}
-                  >
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignSelf: "center",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        marginTop: 7,
-                      }}
-                    >
-                      <View>
-                        <Text
-                          style={{
-                            fontSize: 12,
-                            fontWeight: "bold",
-                            color: "#fff",
-                          }}
-                        >
-                          Chef Kim
-                        </Text>
-                        <View style={{ flexDirection: "row", marginTop: 3 }}>
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          {/* <AntDesign name="star" size={10} color="yellow" />
-                        <AntDesign name="star" size={10} color="yellow" />
-                        <AntDesign name="star" size={10} color="yellow" /> */}
-                        </View>
-                      </View>
-                      <Image
-                        source={require("../assets/images/followwhite.png")}
-                        style={{ width: 18, height: 18 }}
-                      />
-                      {/* <Feather name="bookmark" size={24} color="#fff" /> */}
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        alignSelf: "center",
-                        marginTop: 3,
-                      }}
-                    >
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
-                        <Image
-                          source={require("../assets/images/nearbymarker.png")}
-                          style={{ width: 14, height: 14 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
-                        >
-                          0.5
-                        </Text>
-                      </View>
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
-                        <Image
-                          source={require("../assets/images/edit.png")}
-                          style={{ width: 12, height: 12 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
-                        >
-                          25
-                        </Text>
-                      </View>
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
-                        <Image
-                          source={require("../assets/images/ordertrack.png")}
-                          style={{ width: 19, height: 19 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
-                        >
-                          15
-                        </Text>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </ImageBackground>
-            <View style={styles.imageContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate("Store")}>
               <ImageBackground
-                source={require("../assets/images/chef2.jpg")}
+                source={require("../assets/images/chef1.jpg")}
                 imageStyle={{ borderRadius: 20 }}
                 style={styles.image1}
               >
@@ -239,7 +98,7 @@ const ChefTab = (props) => {
                               color: "#fff",
                             }}
                           >
-                            Chef Lea
+                            Chef Kim
                           </Text>
                           <View style={{ flexDirection: "row", marginTop: 3 }}>
                             <Image
@@ -275,10 +134,7 @@ const ChefTab = (props) => {
                         }}
                       >
                         <View
-                          style={{
-                            flexDirection: "row",
-                            alignItems: "center",
-                          }}
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
                           <Image
                             source={require("../assets/images/nearbymarker.png")}
@@ -296,10 +152,7 @@ const ChefTab = (props) => {
                           </Text>
                         </View>
                         <View
-                          style={{
-                            flexDirection: "row",
-                            alignItems: "center",
-                          }}
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
                           <Image
                             source={require("../assets/images/edit.png")}
@@ -317,10 +170,7 @@ const ChefTab = (props) => {
                           </Text>
                         </View>
                         <View
-                          style={{
-                            flexDirection: "row",
-                            alignItems: "center",
-                          }}
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
                           <Image
                             source={require("../assets/images/ordertrack.png")}
@@ -342,6 +192,164 @@ const ChefTab = (props) => {
                   </View>
                 </View>
               </ImageBackground>
+            </TouchableOpacity>
+            <View style={styles.imageContainer}>
+              <TouchableOpacity onPress={() => navigation.navigate("Store")}>
+                <ImageBackground
+                  source={require("../assets/images/chef2.jpg")}
+                  imageStyle={{ borderRadius: 20 }}
+                  style={styles.image1}
+                >
+                  <View
+                    style={{
+                      height: "100%",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Image
+                      source={require("../assets/images/featured1.png")}
+                      style={{ width: 50, height: 52 }}
+                    />
+                    <View
+                    // style={{
+                    //   justifyContent: "flex-end",
+                    //   height: "100%",
+                    // }}
+                    >
+                      <View
+                        style={{
+                          alignItems: "flex-start",
+                          justifyContent: "flex-start",
+                          height: 67,
+                          backgroundColor: "rgba(52, 52, 52, 0.8)",
+                          borderBottomLeftRadius: 20,
+                          borderBottomRightRadius: 20,
+                        }}
+                      >
+                        <View
+                          style={{
+                            flexDirection: "row",
+                            alignSelf: "center",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            width: "80%",
+                            marginTop: 7,
+                          }}
+                        >
+                          <View>
+                            <Text
+                              style={{
+                                fontSize: 12,
+                                fontWeight: "bold",
+                                color: "#fff",
+                              }}
+                            >
+                              Chef Lea
+                            </Text>
+                            <View
+                              style={{ flexDirection: "row", marginTop: 3 }}
+                            >
+                              <Image
+                                source={require("../assets/images/star.png")}
+                                style={{ width: 8, height: 8 }}
+                              />
+                              <Image
+                                source={require("../assets/images/star.png")}
+                                style={{ width: 8, height: 8 }}
+                              />
+                              <Image
+                                source={require("../assets/images/star.png")}
+                                style={{ width: 8, height: 8 }}
+                              />
+                              {/* <AntDesign name="star" size={10} color="yellow" />
+                        <AntDesign name="star" size={10} color="yellow" />
+                        <AntDesign name="star" size={10} color="yellow" /> */}
+                            </View>
+                          </View>
+                          <Image
+                            source={require("../assets/images/followwhite.png")}
+                            style={{ width: 18, height: 18 }}
+                          />
+                          {/* <Feather name="bookmark" size={24} color="#fff" /> */}
+                        </View>
+                        <View
+                          style={{
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            width: "80%",
+                            alignSelf: "center",
+                            marginTop: 3,
+                          }}
+                        >
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Image
+                              source={require("../assets/images/nearbymarker.png")}
+                              style={{ width: 14, height: 14 }}
+                            />
+                            <Text
+                              style={{
+                                color: "#fff",
+                                fontSize: 11,
+                                fontWeight: "bold",
+                                marginLeft: 2,
+                              }}
+                            >
+                              0.5
+                            </Text>
+                          </View>
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Image
+                              source={require("../assets/images/edit.png")}
+                              style={{ width: 12, height: 12 }}
+                            />
+                            <Text
+                              style={{
+                                color: "#fff",
+                                fontSize: 11,
+                                fontWeight: "bold",
+                                marginLeft: 2,
+                              }}
+                            >
+                              25
+                            </Text>
+                          </View>
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Image
+                              source={require("../assets/images/ordertrack.png")}
+                              style={{ width: 19, height: 19 }}
+                            />
+                            <Text
+                              style={{
+                                color: "#fff",
+                                fontSize: 11,
+                                fontWeight: "bold",
+                                marginLeft: 2,
+                              }}
+                            >
+                              15
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
               {/* <Image
                 source={require("../assets/images/chef2.jpg")}
                 style={styles.image}
@@ -429,295 +437,299 @@ const ChefTab = (props) => {
           </View>
 
           <View style={styles.imageContainer}>
-            <ImageBackground
-              source={require("../assets/images/chef3.jpg")}
-              imageStyle={{ borderRadius: 20 }}
-              style={styles.image1}
-            >
-              <View
-                style={{
-                  height: "100%",
-                  justifyContent: "space-between",
-                }}
+            <TouchableOpacity onPress={() => navigation.navigate("Store")}>
+              <ImageBackground
+                source={require("../assets/images/chef3.jpg")}
+                imageStyle={{ borderRadius: 20 }}
+                style={styles.image1}
               >
-                <Image
-                  source={require("../assets/images/featured1.png")}
-                  style={{ width: 50, height: 52 }}
-                />
                 <View
-                // style={{
-                //   justifyContent: "flex-end",
-                //   height: "100%",
-                // }}
+                  style={{
+                    height: "100%",
+                    justifyContent: "space-between",
+                  }}
                 >
+                  <Image
+                    source={require("../assets/images/featured1.png")}
+                    style={{ width: 50, height: 52 }}
+                  />
                   <View
-                    style={{
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                      height: 67,
-                      backgroundColor: "rgba(52, 52, 52, 0.8)",
-                      borderBottomLeftRadius: 20,
-                      borderBottomRightRadius: 20,
-                    }}
+                  // style={{
+                  //   justifyContent: "flex-end",
+                  //   height: "100%",
+                  // }}
                   >
                     <View
                       style={{
-                        flexDirection: "row",
-                        alignSelf: "center",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        marginTop: 7,
+                        alignItems: "flex-start",
+                        justifyContent: "flex-start",
+                        height: 67,
+                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        borderBottomLeftRadius: 20,
+                        borderBottomRightRadius: 20,
                       }}
                     >
-                      <View>
-                        <Text
-                          style={{
-                            fontSize: 12,
-                            fontWeight: "bold",
-                            color: "#fff",
-                          }}
-                        >
-                          Chef Mona
-                        </Text>
-                        <View style={{ flexDirection: "row", marginTop: 3 }}>
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          {/* <AntDesign name="star" size={10} color="yellow" />
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          alignSelf: "center",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          width: "80%",
+                          marginTop: 7,
+                        }}
+                      >
+                        <View>
+                          <Text
+                            style={{
+                              fontSize: 12,
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            Chef Mona
+                          </Text>
+                          <View style={{ flexDirection: "row", marginTop: 3 }}>
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            {/* <AntDesign name="star" size={10} color="yellow" />
                         <AntDesign name="star" size={10} color="yellow" />
                         <AntDesign name="star" size={10} color="yellow" /> */}
+                          </View>
                         </View>
-                      </View>
-                      <Image
-                        source={require("../assets/images/followwhite.png")}
-                        style={{ width: 18, height: 18 }}
-                      />
-                      {/* <Feather name="bookmark" size={24} color="#fff" /> */}
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        alignSelf: "center",
-                        marginTop: 3,
-                      }}
-                    >
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
                         <Image
-                          source={require("../assets/images/nearbymarker.png")}
-                          style={{ width: 14, height: 14 }}
+                          source={require("../assets/images/followwhite.png")}
+                          style={{ width: 18, height: 18 }}
                         />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
-                        >
-                          0.5
-                        </Text>
+                        {/* <Feather name="bookmark" size={24} color="#fff" /> */}
                       </View>
                       <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          width: "80%",
+                          alignSelf: "center",
+                          marginTop: 3,
+                        }}
                       >
-                        <Image
-                          source={require("../assets/images/edit.png")}
-                          style={{ width: 12, height: 12 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
-                          25
-                        </Text>
-                      </View>
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
-                        <Image
-                          source={require("../assets/images/ordertrack.png")}
-                          style={{ width: 19, height: 19 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
+                          <Image
+                            source={require("../assets/images/nearbymarker.png")}
+                            style={{ width: 14, height: 14 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            0.5
+                          </Text>
+                        </View>
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
-                          15
-                        </Text>
+                          <Image
+                            source={require("../assets/images/edit.png")}
+                            style={{ width: 12, height: 12 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            25
+                          </Text>
+                        </View>
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
+                        >
+                          <Image
+                            source={require("../assets/images/ordertrack.png")}
+                            style={{ width: 19, height: 19 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            15
+                          </Text>
+                        </View>
                       </View>
                     </View>
                   </View>
                 </View>
-              </View>
-            </ImageBackground>
+              </ImageBackground>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.imageContainer}>
-            <ImageBackground
-              source={require("../assets/images/chef1.jpg")}
-              imageStyle={{ borderRadius: 20 }}
-              style={styles.image1}
-            >
-              <View
-                style={{
-                  height: "100%",
-                  justifyContent: "space-between",
-                }}
+            <TouchableOpacity onPress={() => navigation.navigate("Store")}>
+              <ImageBackground
+                source={require("../assets/images/chef1.jpg")}
+                imageStyle={{ borderRadius: 20 }}
+                style={styles.image1}
               >
-                <Image
-                  source={require("../assets/images/featured1.png")}
-                  style={{ width: 50, height: 52 }}
-                />
                 <View
-                // style={{
-                //   justifyContent: "flex-end",
-                //   height: "100%",
-                // }}
+                  style={{
+                    height: "100%",
+                    justifyContent: "space-between",
+                  }}
                 >
+                  <Image
+                    source={require("../assets/images/featured1.png")}
+                    style={{ width: 50, height: 52 }}
+                  />
                   <View
-                    style={{
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                      height: 67,
-                      backgroundColor: "rgba(52, 52, 52, 0.8)",
-                      borderBottomLeftRadius: 20,
-                      borderBottomRightRadius: 20,
-                    }}
+                  // style={{
+                  //   justifyContent: "flex-end",
+                  //   height: "100%",
+                  // }}
                   >
                     <View
                       style={{
-                        flexDirection: "row",
-                        alignSelf: "center",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        marginTop: 7,
+                        alignItems: "flex-start",
+                        justifyContent: "flex-start",
+                        height: 67,
+                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        borderBottomLeftRadius: 20,
+                        borderBottomRightRadius: 20,
                       }}
                     >
-                      <View>
-                        <Text
-                          style={{
-                            fontSize: 12,
-                            fontWeight: "bold",
-                            color: "#fff",
-                          }}
-                        >
-                          Chef Kim
-                        </Text>
-                        <View style={{ flexDirection: "row", marginTop: 3 }}>
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          <Image
-                            source={require("../assets/images/star.png")}
-                            style={{ width: 8, height: 8 }}
-                          />
-                          {/* <AntDesign name="star" size={10} color="yellow" />
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          alignSelf: "center",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          width: "80%",
+                          marginTop: 7,
+                        }}
+                      >
+                        <View>
+                          <Text
+                            style={{
+                              fontSize: 12,
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            Chef Kim
+                          </Text>
+                          <View style={{ flexDirection: "row", marginTop: 3 }}>
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            <Image
+                              source={require("../assets/images/star.png")}
+                              style={{ width: 8, height: 8 }}
+                            />
+                            {/* <AntDesign name="star" size={10} color="yellow" />
                         <AntDesign name="star" size={10} color="yellow" />
                         <AntDesign name="star" size={10} color="yellow" /> */}
+                          </View>
                         </View>
-                      </View>
-                      <Image
-                        source={require("../assets/images/followwhite.png")}
-                        style={{ width: 18, height: 18 }}
-                      />
-                      {/* <Feather name="bookmark" size={24} color="#fff" /> */}
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        width: "80%",
-                        alignSelf: "center",
-                        marginTop: 3,
-                      }}
-                    >
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
                         <Image
-                          source={require("../assets/images/nearbymarker.png")}
-                          style={{ width: 14, height: 14 }}
+                          source={require("../assets/images/followwhite.png")}
+                          style={{ width: 18, height: 18 }}
                         />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
-                        >
-                          0.5
-                        </Text>
+                        {/* <Feather name="bookmark" size={24} color="#fff" /> */}
                       </View>
                       <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          width: "80%",
+                          alignSelf: "center",
+                          marginTop: 3,
+                        }}
                       >
-                        <Image
-                          source={require("../assets/images/edit.png")}
-                          style={{ width: 12, height: 12 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
-                          25
-                        </Text>
-                      </View>
-                      <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                      >
-                        <Image
-                          source={require("../assets/images/ordertrack.png")}
-                          style={{ width: 19, height: 19 }}
-                        />
-                        <Text
-                          style={{
-                            color: "#fff",
-                            fontSize: 11,
-                            fontWeight: "bold",
-                            marginLeft: 2,
-                          }}
+                          <Image
+                            source={require("../assets/images/nearbymarker.png")}
+                            style={{ width: 14, height: 14 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            0.5
+                          </Text>
+                        </View>
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
                         >
-                          15
-                        </Text>
+                          <Image
+                            source={require("../assets/images/edit.png")}
+                            style={{ width: 12, height: 12 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            25
+                          </Text>
+                        </View>
+                        <View
+                          style={{ flexDirection: "row", alignItems: "center" }}
+                        >
+                          <Image
+                            source={require("../assets/images/ordertrack.png")}
+                            style={{ width: 19, height: 19 }}
+                          />
+                          <Text
+                            style={{
+                              color: "#fff",
+                              fontSize: 11,
+                              fontWeight: "bold",
+                              marginLeft: 2,
+                            }}
+                          >
+                            15
+                          </Text>
+                        </View>
                       </View>
                     </View>
                   </View>
                 </View>
-              </View>
-            </ImageBackground>
+              </ImageBackground>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
