@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Touchable,
 } from "react-native";
 import styles from "./profile.style";
 
@@ -145,6 +146,7 @@ const profilepage = (props) => {
             </View>
             <Text style={styles.reply}>reply</Text>
           </View>
+
           <View style={styles.bottomContainer}>
             <View style={styles.foodImagesContainer}>
               <Image
@@ -174,6 +176,20 @@ const profilepage = (props) => {
                 style={styles.foodImages}
               />
             </View>
+            <View style={styles.foodImagesContainer}>
+              <Image
+                source={require("../../assets/images/food1.jpg")}
+                style={styles.foodImages}
+              />
+              <Image
+                source={require("../../assets/images/food2.jpg")}
+                style={styles.foodImages}
+              />
+              <Image
+                source={require("../../assets/images/food3.jpg")}
+                style={styles.foodImages}
+              />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -182,3 +198,139 @@ const profilepage = (props) => {
 };
 
 export default profilepage;
+
+// import React, { useState } from "react";
+// import {
+//   StyleSheet,
+//   Text,
+//   Image,
+//   View,
+//   ScrollView,
+//   Dimensions,
+// } from "react-native";
+// import { TouchableOpacity } from "react-native-gesture-handler";
+// import MapView, { Polyline, Marker } from "react-native-maps";
+
+// const { width } = Dimensions.get("window");
+
+// const profilepage = (props) => {
+//   const { isVisible, onBackdropPress } = props;
+//   const Sm = {
+//     latitude: 14.30085,
+//     longitude: 120.95648,
+//     latitudeDelta: 0.0922,
+//     longitudeDelta: 0.0421,
+//   };
+
+//   const Hall = {
+//     latitude: 14.283322,
+//     longitude: 120.9599,
+//     latitudeDelta: 0.0922,
+//     longitudeDelta: 0.0421,
+//   };
+
+//   const [mapWidth, setMapWidth] = useState("99%");
+//   function updateMapStyling() {
+//     setMapWidth("100%");
+//   }
+
+//   const [swipedUp, setSwipedUp] = useState(false);
+
+//   function onSwipeUp() {
+//     setSwipedUp(true);
+//   }
+//   return (
+//     <View style={styles.topContainer}>
+//       <MapView
+//         showUserLocation={true}
+//         showsMyLocationButton={true}
+//         initialRegion={{
+//           latitude: 14.30085,
+//           longitude: 120.95648,
+//           latitudeDelta: 0.0922,
+//           longitudeDelta: 0.0421,
+//         }}
+//         // region={state.region}
+//         style={{
+//           flex: 1,
+//           width: mapWidth,
+//         }}
+//         onMapReady={() => {
+//           updateMapStyling();
+//         }}
+//       >
+//         <Marker coordinate={{ latitude: 14.30085, longitude: 120.95648 }} />
+//         <Polyline coordinates={[Sm, Hall]} strokeWidth={2} />
+//         <Marker coordinate={{ latitude: 14.283322, longitude: 120.9599 }} />
+//       </MapView>
+//       <TouchableOpacity onPress={onSwipeUp} activeOpacity={1}>
+//         <View style={swipedUp ? { height: 400 } : styles.view}>
+//           <ScrollView style={{ backgroundColor: "red" }}>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//             <Text>sjkdh</Text>
+//           </ScrollView>
+//         </View>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// };
+
+// export default profilepage;
+
+// // const styles = StyleSheet.create({})
+// const styles = StyleSheet.create({
+//   modalContainer: {
+//     margin: 0,
+//     justifyContent: "flex-end",
+//     shadowColor: "rgba(0, 0, 0, 0.3)",
+//     shadowOffset: {
+//       width: 0,
+//       height: 0,
+//     },
+//     shadowRadius: 40,
+//     shadowOpacity: 1,
+//     elevation: 5,
+//   },
+//   view: {
+//     maxHeight: 100,
+//   },
+//   topContainer: {
+//     height: "100%",
+//     backgroundColor: "white",
+//   },
+//   bar: {
+//     backgroundColor: "gray",
+//     height: 15,
+//     alignSelf: "center",
+//     borderRadius: 20,
+//     width: width / 3.5,
+//     marginTop: 10,
+//     marginBottom: 10,
+//   },
+//   line: {
+//     width: width / 4,
+//     height: 15,
+//     alignSelf: "center",
+//     marginTop: 7,
+//   },
+// });

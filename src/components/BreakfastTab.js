@@ -28,6 +28,18 @@ const menus = [
     name: "Sisig",
     price: 100,
   },
+  {
+    id: "4",
+    image: require("../assets/images/pancitcanton.png"),
+    name: "Pancit Canton",
+    price: 130,
+  },
+  {
+    id: "5",
+    image: require("../assets/images/friedrice.png"),
+    name: "Fried Rice",
+    price: 120,
+  },
 ];
 
 const { width } = Dimensions.get("window");
@@ -211,7 +223,7 @@ const styles = StyleSheet.create({
   },
   lists: {
     justifyContent: "space-between",
-    backgroundColor: "#EAEBEF",
+    backgroundColor: "#DDDFEA",
     flexDirection: "row",
     alignItems: "center",
     height: 120,

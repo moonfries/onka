@@ -17,7 +17,7 @@ const RestaurantTab = (props) => {
   return (
     <View>
       <Image
-        source={require("../assets/images/resto-banner.jpeg")}
+        source={require("../assets/images/restobanner.jpg")}
         style={styles.banner}
       />
 
@@ -738,7 +738,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   banner: {
-    height: 197,
+    height: 180,
     width: "100%",
   },
   // imageContainer: {
@@ -759,7 +759,7 @@ const styles = StyleSheet.create({
   },
   hashtagContainer: {
     height: 128,
-    backgroundColor: "red",
+    backgroundColor: "#bb2024",
     width: width / 2.4,
     borderRadius: 20,
   },

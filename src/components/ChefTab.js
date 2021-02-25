@@ -19,7 +19,7 @@ const ChefTab = (props) => {
   return (
     <View>
       <Image
-        source={require("../assets/images/menu4.jpg")}
+        source={require("../assets/images/chefbanner.jpg")}
         style={styles.banner}
       />
 
@@ -355,6 +355,76 @@ const ChefTab = (props) => {
                 style={styles.image}
               /> */}
             </View>
+            <View style={styles.hashtagContainer1}>
+              <View style={{ marginTop: 15 }}>
+                <View
+                  style={{
+                    backgroundColor: "#fff",
+                    height: 24,
+                    borderRadius: 9,
+                    width: width / 5,
+                    alignSelf: "center",
+                    marginTop: 5,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 11,
+                      fontWeight: "bold",
+                      alignSelf: "center",
+                      marginTop: 5,
+                      color: "#343A40",
+                    }}
+                  >
+                    #Meat
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    backgroundColor: "#fff",
+                    height: 24,
+                    borderRadius: 9,
+                    width: width / 4.5,
+                    alignSelf: "center",
+                    marginTop: 5,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 11,
+                      fontWeight: "bold",
+                      alignSelf: "center",
+                      marginTop: 5,
+                      color: "#343A40",
+                    }}
+                  >
+                    #Thaifoods
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    backgroundColor: "#fff",
+                    height: 24,
+                    borderRadius: 9,
+                    width: width / 4.5,
+                    alignSelf: "center",
+                    marginTop: 5,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 11,
+                      fontWeight: "bold",
+                      alignSelf: "center",
+                      marginTop: 5,
+                      color: "#343A40",
+                    }}
+                  >
+                    #Pasta
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
 
@@ -386,6 +456,7 @@ const ChefTab = (props) => {
                     fontWeight: "bold",
                     alignSelf: "center",
                     marginTop: 5,
+                    color: "#343A40",
                   }}
                 >
                   #Pastry
@@ -407,6 +478,7 @@ const ChefTab = (props) => {
                     fontWeight: "bold",
                     alignSelf: "center",
                     marginTop: 5,
+                    color: "#343A40",
                   }}
                 >
                   #Vegetarian
@@ -428,6 +500,7 @@ const ChefTab = (props) => {
                     fontWeight: "bold",
                     alignSelf: "center",
                     marginTop: 5,
+                    color: "#343A40",
                   }}
                 >
                   #Seafoods
@@ -750,8 +823,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   banner: {
-    height: 197,
-    width: 393,
+    height: 180,
+    width: "100%",
   },
   // imageContainer: {
   //   backgroundColor: "red",
@@ -771,8 +844,15 @@ const styles = StyleSheet.create({
   },
   hashtagContainer: {
     height: 128,
-    backgroundColor: "orange",
+    backgroundColor: "#fea501",
     width: width / 2.4,
     borderRadius: 20,
+  },
+  hashtagContainer1: {
+    height: 128,
+    backgroundColor: "#3cb7d9",
+    width: width / 2.4,
+    borderRadius: 20,
+    marginTop: 10,
   },
 });

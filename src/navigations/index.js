@@ -11,6 +11,9 @@ import FilterScreen from "../screens/filterpage/filterpage";
 import ProfileScreen from "../screens/profilepage/profilepage";
 import BasketScreen from "../screens/basketscreen/basketscreen";
 import StoreScreen from "../screens/storepage/storepage";
+import SupplyScreen from "../screens/supplypage/supplypage";
+import InboxScreen from "../screens/inboxpage/inboxpage";
+import NotificationScreen from "../screens/notificationpage/notificationpage";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -26,6 +29,9 @@ export default function App() {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Basket" component={BasketScreen} />
         <Stack.Screen name="Store" component={StoreScreen} />
+        <Stack.Screen name="Supply" component={SupplyScreen} />
+        <Stack.Screen name="Inbox" component={InboxScreen} />
+        <Stack.Screen name="Notification" component={NotificationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

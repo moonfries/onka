@@ -14,9 +14,9 @@ import Supply from "../components/Supply";
 
 const { width } = Dimensions.get("window");
 
-class MenuSupply extends PureComponent {
+class MenuSupply1 extends PureComponent {
   state = {
-    selectedTab: 0,
+    selectedTab: 1,
   };
 
   renderTabContent = (selected) => {
@@ -38,9 +38,10 @@ class MenuSupply extends PureComponent {
       <View style={styles.container}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <TouchableOpacity
-            onPress={() => {
-              this.setState({ selectedTab: 0 });
-            }}
+            onPress={() => navigation.goBack()}
+            // onPress={() => {
+            //   this.setState({ selectedTab: 0 });
+            // }}
             style={styles.buttons}
           >
             <View
@@ -73,8 +74,8 @@ class MenuSupply extends PureComponent {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("Supply")}
-            // onPress={() => this.setState({ selectedTab: 1 })}
+            // onPress={() => navigation.navigate("Supply")}
+            onPress={() => this.setState({ selectedTab: 1 })}
             style={styles.buttons}
           >
             <View
@@ -167,4 +168,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuSupply;
+export default MenuSupply1;

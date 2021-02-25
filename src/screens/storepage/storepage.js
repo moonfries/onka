@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -14,6 +14,7 @@ import { Entypo } from "@expo/vector-icons";
 
 const storepage = (props) => {
   const { navigation } = props;
+
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <ScrollView>

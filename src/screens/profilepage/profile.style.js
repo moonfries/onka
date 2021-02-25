@@ -5,6 +5,7 @@ const { width, height } = Dimensions.get("window");
 const styles = {
   safeAreaView: {
     flex: 1,
+    backgroundColor: "#DEE1E6",
   },
   container: {
     height: "100%",
@@ -172,8 +173,8 @@ const styles = {
     width: width / 3.3,
   },
   bottomContainer: {
-    marginTop: -100,
-    marginBottom: 120,
+    marginTop: -180,
+    marginBottom: 390,
     height: 400,
     backgroundColor: "#e9ecef",
   },

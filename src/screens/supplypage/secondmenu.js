@@ -10,10 +10,11 @@ import {
   useWindowDimensions,
   ScrollView,
   StyleSheet,
+  Touchable,
 } from "react-native";
 import Swiper from "react-native-swiper";
 import { AntDesign } from "@expo/vector-icons";
-import MainHeader from "../../components/MainHeader";
+import MainHeader from "../../components/MainHeader1";
 import ChatNow from "../../components/ChatNow";
 import OrderNow from "../../components/OrderNow";
 import MenuSupply from "../../components/MenuSupply1";
@@ -26,7 +27,7 @@ const secondmenu = ({ navigation }) => {
   return (
     <View>
       <ImageBackground
-        source={require("../../assets/images/menu2.jpg")}
+        source={require("../../assets/images/menu1.jpg")}
         resizeMode="cover"
         style={{
           height: "100%",
@@ -41,20 +42,19 @@ const secondmenu = ({ navigation }) => {
                 source={require("../../assets/images/featured.png")}
                 style={styles.featuredImage}
               />
-              <Text style={styles.foodName}>Salmon</Text>
+              <Text style={styles.foodName}>Fresh Shrimp</Text>
               <View style={styles.infoContainer1}>
                 <View style={styles.info}>
                   <Text style={styles.infoText}>
-                    It is compromised of thin slices of salmon and union. Juicy
-                    and Spicy
+                    Lorem Ipsum dolor example text here only
                   </Text>
                 </View>
-                <TouchableOpacity>
+                {/* <TouchableOpacity>
                   <Image
                     source={require("../../assets/images/ribbonwhite.png")}
                     style={styles.ribbonwhite}
                   />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
             </View>
           </View>
@@ -71,18 +71,28 @@ const secondmenu = ({ navigation }) => {
                     style={styles.followIcon}
                   />
                   <Image
-                    source={require("../../assets/images/chef.png")}
+                    source={require("../../assets/images/chef3.png")}
                     style={styles.profile}
                   />
                 </TouchableOpacity>
                 <View style={styles.nameContainer}>
-                  <Text style={styles.nameText}>ChefBea12</Text>
+                  <Text style={styles.nameText}>Juls Market</Text>
                   <View style={{ flexDirection: "row" }}>
+                    <Image
+                      source={require("../../assets/images/star.png")}
+                      style={{ width: 10, height: 10, marginRight: 2 }}
+                    />
+                    <Image
+                      source={require("../../assets/images/star.png")}
+                      style={{ width: 10, height: 10, marginRight: 2 }}
+                    />
+                    <Image
+                      source={require("../../assets/images/star.png")}
+                      style={{ width: 10, height: 10 }}
+                    />
+                    {/* <AntDesign name="star" size={10} color="yellow" />
                     <AntDesign name="star" size={10} color="yellow" />
-                    <AntDesign name="star" size={10} color="yellow" />
-                    <AntDesign name="star" size={10} color="yellow" />
-                    <AntDesign name="star" size={10} color="yellow" />
-                    <AntDesign name="star" size={10} color="yellow" />
+                    <AntDesign name="star" size={10} color="yellow" /> */}
                   </View>
                 </View>
               </View>

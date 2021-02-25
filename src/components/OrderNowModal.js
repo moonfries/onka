@@ -72,106 +72,128 @@ const Modals = (props) => {
           style={styles.keyboard}
         >
           <View style={styles.topContainer}>
-            <View style={styles.header}>
-              <TouchableOpacity onPress={props.onDismiss}>
-                <Icon style={styles.controlsLeft} name="chevron-back-outline" />
-              </TouchableOpacity>
-              <Text style={styles.menu}>Beef Steak</Text>
-              <Entypo name="dots-three-vertical" size={20} color="black" />
-            </View>
-            <Text style={styles.imageCount}>1/4</Text>
-            <View style={styles.imageContainer}>
-              <Image
-                source={require("../assets/images/beefsteak.jpg")}
-                style={styles.image}
-              />
-            </View>
-            <View style={styles.info}>
-              <Text>
-                Marinate beef in soy sauce, lemon and pepper for at least one
-                hour.
-              </Text>
-            </View>
-            <View style={styles.priceContainer}>
-              <Image
-                source={require("../assets/images/peso.png")}
-                style={styles.priceImage}
-              />
-              <Text style={styles.price}>120</Text>
-            </View>
-            <View style={styles.counter}>
-              <TouchableOpacity>
-                <View style={styles.minusContainer}>
-                  <Icon name="remove-outline" style={styles.minus} />
+            <View
+              style={{
+                justifyContent: "space-between",
+                height: "100%",
+              }}
+            >
+              <View>
+                <View style={styles.header}>
+                  <TouchableOpacity onPress={props.onDismiss}>
+                    <Icon
+                      style={styles.controlsLeft}
+                      name="chevron-back-outline"
+                    />
+                  </TouchableOpacity>
+                  <Text style={styles.menu}>Beef Steak</Text>
+                  <Entypo name="dots-three-vertical" size={20} color="black" />
                 </View>
-              </TouchableOpacity>
-              <View style={styles.countContainer}>
-                <Text style={styles.count}>1</Text>
-              </View>
-              <TouchableOpacity>
-                <View style={styles.plusContainer}>
-                  <Icon name="add-outline" style={styles.plus} />
+                <Text style={styles.imageCount}>1/4</Text>
+                <View style={styles.imageContainer}>
+                  <Image
+                    source={require("../assets/images/beefsteak.jpg")}
+                    style={styles.image}
+                  />
                 </View>
-              </TouchableOpacity>
-            </View>
-
-            <List>
-              <List
-                showsVerticalScrollIndicator={false}
-                dataArray={menus}
-                vertical={true}
-                style={styles.listBody}
-                keyExtractor={(menus) => menus.id}
-                renderRow={(menu) => (
-                  <View>
-                    <View style={styles.lists}>
-                      <View style={styles.firstList}>
-                        <Image source={menu.image} style={styles.listImages} />
-                        <Text style={styles.listNames}>{menu.name}</Text>
-                      </View>
-
-                      <View style={styles.secondList}>
-                        <View style={styles.priceListContainer}>
-                          <Image
-                            source={require("../assets/images/peso1.png")}
-                            style={styles.pesoList}
-                          />
-                          <Text style={styles.listPrices}>{menu.price}</Text>
-                        </View>
-                        <View style={styles.counter1}>
-                          <TouchableOpacity>
-                            <View style={styles.minusContainer}>
-                              <Icon
-                                name="remove-outline"
-                                style={styles.minus}
-                              />
-                            </View>
-                          </TouchableOpacity>
-                          <View style={styles.countContainer1}>
-                            <Text style={styles.count}>1</Text>
-                          </View>
-                          <TouchableOpacity>
-                            <View style={styles.plusContainer}>
-                              <Icon name="add-outline" style={styles.plus} />
-                            </View>
-                          </TouchableOpacity>
-                        </View>
-                      </View>
+                <View style={styles.info}>
+                  <Text>
+                    Marinate beef in soy sauce, lemon and pepper for at least
+                    one hour.
+                  </Text>
+                </View>
+                <View style={styles.priceContainer}>
+                  <Image
+                    source={require("../assets/images/peso.png")}
+                    style={styles.priceImage}
+                  />
+                  <Text style={styles.price}>120</Text>
+                </View>
+                <View style={styles.counter}>
+                  <TouchableOpacity>
+                    <View style={styles.minusContainer}>
+                      <Icon name="remove-outline" style={styles.minus} />
                     </View>
-                    <View style={styles.borderList} />
+                  </TouchableOpacity>
+                  <View style={styles.countContainer}>
+                    <Text style={styles.count}>1</Text>
                   </View>
-                )}
-              />
-            </List>
+                  <TouchableOpacity>
+                    <View style={styles.plusContainer}>
+                      <Icon name="add-outline" style={styles.plus} />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
 
-            <View style={styles.ordernow}>
-              <View style={styles.ordernowContainer}>
-                <View style={styles.totalOrder}>
-                  <View style={styles.leftTotalOrder}>
-                    <Text style={styles.totalText}>Total:</Text>
-                    <Text style={styles.totalPrice}>₱ 180</Text>
+              <View>
+                <List>
+                  <List
+                    showsVerticalScrollIndicator={false}
+                    dataArray={menus}
+                    vertical={true}
+                    style={styles.listBody}
+                    keyExtractor={(menus) => menus.id}
+                    renderRow={(menu) => (
+                      <View>
+                        <View style={styles.lists}>
+                          <View style={styles.firstList}>
+                            <Image
+                              source={menu.image}
+                              style={styles.listImages}
+                            />
+                            <Text style={styles.listNames}>{menu.name}</Text>
+                          </View>
+
+                          <View style={styles.secondList}>
+                            <View style={styles.priceListContainer}>
+                              <Image
+                                source={require("../assets/images/peso1.png")}
+                                style={styles.pesoList}
+                              />
+                              <Text style={styles.listPrices}>
+                                {menu.price}
+                              </Text>
+                            </View>
+                            <View style={styles.counter1}>
+                              <TouchableOpacity>
+                                <View style={styles.minusContainer}>
+                                  <Icon
+                                    name="remove-outline"
+                                    style={styles.minus}
+                                  />
+                                </View>
+                              </TouchableOpacity>
+                              <View style={styles.countContainer1}>
+                                <Text style={styles.count}>1</Text>
+                              </View>
+                              <TouchableOpacity>
+                                <View style={styles.plusContainer}>
+                                  <Icon
+                                    name="add-outline"
+                                    style={styles.plus}
+                                  />
+                                </View>
+                              </TouchableOpacity>
+                            </View>
+                          </View>
+                        </View>
+                        <View style={styles.borderList} />
+                      </View>
+                    )}
+                  />
+                </List>
+
+                <View style={styles.ordernow}>
+                  <View style={styles.ordernowContainer}>
+                    <View style={styles.totalOrder}>
+                      <View style={styles.leftTotalOrder}>
+                        <Text style={styles.totalText}>Total:</Text>
+                        <Text style={styles.totalPrice}>₱ 180</Text>
+                      </View>
+                      <Text style={styles.ordernowText}>Order Now</Text>
+                    </View>
                   </View>
-                  <Text style={styles.ordernowText}>Order Now</Text>
                 </View>
               </View>
             </View>
@@ -203,7 +225,7 @@ const styles = StyleSheet.create({
   },
   info: {
     alignSelf: "center",
-    width: width / 1.3,
+    width: width / 1.5,
     marginTop: 10,
   },
   controlsLeft: {
@@ -214,7 +236,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 5,
   },
   priceImage: {
     width: 20,
@@ -232,7 +254,7 @@ const styles = StyleSheet.create({
   counter: {
     flexDirection: "row",
     alignSelf: "center",
-    marginTop: 10,
+    marginTop: 5,
   },
   counter1: {
     flexDirection: "row",
@@ -298,7 +320,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   listBody: {
-    marginTop: 25,
     backgroundColor: "#212529",
   },
   lists: {
@@ -306,9 +327,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#212529",
     flexDirection: "row",
     alignItems: "center",
-    height: 80,
-    // marginBottom: 1,
-    // marginTop: 30,
+    height: 85,
   },
   firstList: {
     marginLeft: 20,
@@ -325,7 +344,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 12,
     borderColor: "#fff",
-    borderWidth: 4,
+    borderWidth: 2,
   },
   listNames: {
     marginLeft: 10,
@@ -358,8 +377,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 22,
   },
   ordernow: {
-    flex: 1,
-    justifyContent: "flex-end",
+    // flex: 1,
+    // justifyContent: "flex-end",
   },
   ordernowContainer: {
     height: 60,

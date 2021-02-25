@@ -10,9 +10,9 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import MenuSupply from "../components/MenuSupply";
+import MenuSupply from "../components/MenuSupply1";
 
-function MainHeader({ navigation }) {
+function MainHeader1({ navigation }) {
   return (
     <View>
       {/* <Image
@@ -71,7 +71,7 @@ function MainHeader({ navigation }) {
   );
 }
 
-export default MainHeader;
+export default MainHeader1;
 
 const styles = StyleSheet.create({
   topContainer: {

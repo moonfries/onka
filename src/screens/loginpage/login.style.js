@@ -5,9 +5,9 @@ const { width, height } = Dimensions.get("window");
 const styles = {
   safeAreaView: {
     flex: 1,
+    backgroundColor: "#fa5252",
   },
   mainContainer: {
-    backgroundColor: "#fa5252",
     height: "100%",
   },
   keyboard: {
