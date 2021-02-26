@@ -4,9 +4,9 @@
     "slug": "Onka",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/192.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/home.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#fa5252"
     },
