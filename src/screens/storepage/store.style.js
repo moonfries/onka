@@ -6,9 +6,9 @@ const styles = {
   safeAreaView: {
     flex: 1,
   },
-  container: {
-    height: "100%",
-  },
+  // container: {
+  //   backgroundColor: "red",
+  // },
   header: {
     marginTop: 50,
     marginLeft: 20,
@@ -30,9 +30,9 @@ const styles = {
     width: 17,
     height: 17,
   },
-  top: {
-    marginTop: 20,
-  },
+  // top: {
+  //   marginTop: 20,
+  // },
   banner: {
     height: 194,
     width: "100%",

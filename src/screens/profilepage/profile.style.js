@@ -5,32 +5,12 @@ const { width, height } = Dimensions.get("window");
 const styles = {
   safeAreaView: {
     flex: 1,
-    backgroundColor: "#DEE1E6",
   },
-  container: {
-    height: "100%",
-  },
-  header: {
-    marginTop: 50,
-    marginLeft: 20,
-    marginRight: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  backarrow: {
-    width: 25,
-    height: 25,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#3a404c",
-  },
-  menu: {
-    width: 17,
-    height: 17,
-  },
+  // container: {
+  //   height: "100%",
+  //   // backgroundColor: "red",
+  //   // backgroundColor: "#DEE1E6",
+  // },
   top: {
     alignSelf: "center",
     alignItems: "center",
@@ -173,9 +153,9 @@ const styles = {
     width: width / 3.3,
   },
   bottomContainer: {
-    marginTop: -180,
-    marginBottom: 390,
-    height: 400,
+    // marginTop: -200,
+    // marginBottom: 10,
+    // height: 10,
     backgroundColor: "#e9ecef",
   },
   foodImagesContainer: {

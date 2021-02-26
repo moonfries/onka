@@ -75,7 +75,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 0 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 0 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />
@@ -105,7 +105,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 1 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 1 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />
@@ -137,7 +137,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 2 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 2 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />
@@ -169,7 +169,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 3 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 3 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />
@@ -201,7 +201,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 4 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 4 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />
@@ -233,7 +233,7 @@ class StoreMenu extends PureComponent {
                     style={[
                       styles.caret,
                       {
-                        color: selectedTab === 5 ? "#e9ecef" : "transparent",
+                        color: selectedTab === 5 ? "#DDDFEA" : "transparent",
                       },
                     ]}
                   />

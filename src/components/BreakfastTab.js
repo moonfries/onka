@@ -40,13 +40,19 @@ const menus = [
     name: "Fried Rice",
     price: 120,
   },
+  // {
+  //   id: "6",
+  //   image: require("../assets/images/pancitcanton.png"),
+  //   name: "Pancit Canton",
+  //   price: 130,
+  // },
 ];
 
 const { width } = Dimensions.get("window");
 
 const BreakfastTab = () => {
   return (
-    <View>
+    <View style={{ marginBottom: 15 }}>
       <List>
         <List
           showsVerticalScrollIndicator={false}
